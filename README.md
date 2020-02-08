@@ -1,5 +1,10 @@
 # Pramendra's dotfiles repository
 
+## setup github
+```
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
 ## Init dotfiles 
 ```
 $ mkdir ~/.dotfiles
@@ -23,3 +28,4 @@ node_modules
 bower_components
 npm-debug.log
 ```
+## setup brew & zsh, macos
