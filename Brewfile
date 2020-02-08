@@ -61,6 +61,7 @@ cask 'gpg-suite'
 cask 'iterm2'
 cask 'java'
 cask 'mysqlworkbench'
+cask 'postman'
 cask 'screenflow'
 cask 'sip'
 cask 'skype'
@@ -76,7 +77,6 @@ cask 'virtualbox' # Might need to allow access in Security settings
 cask 'virtualbox-extension-pack'
 cask 'vlc'
 cask 'whatsapp'
-
 
 # Quicklook
 cask 'qlcolorcode'
