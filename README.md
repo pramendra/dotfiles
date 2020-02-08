@@ -3,6 +3,15 @@
 ## setup github
 ```
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+$ pbcopy < ~/.ssh/id_rsa.pub
+```
+https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+
+## Install 
+```
+$ git clone git@github.com:pramendra/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ sh install.sh
 ```
 
 ## Init dotfiles 
@@ -29,3 +38,4 @@ bower_components
 npm-debug.log
 ```
 ## setup brew & zsh, macos
+* check config .macos, Brewfile, .zshrc, mackup.cfg files
