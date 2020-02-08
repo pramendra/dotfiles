@@ -39,6 +39,7 @@ brew 'gifsicle'
 brew 'mysql'
 brew 'nginx'
 brew 'node'
+brew 'nvm'
 brew 'redis'
 brew 'yarn'
 brew 'zsh'
@@ -55,6 +56,7 @@ cask 'firefox'
 cask 'github'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
+cask 'google-cloud-sdk'
 cask 'gpg-suite'
 cask 'iterm2'
 cask 'java'
@@ -74,6 +76,7 @@ cask 'virtualbox' # Might need to allow access in Security settings
 cask 'virtualbox-extension-pack'
 cask 'vlc'
 cask 'whatsapp'
+
 
 # Quicklook
 cask 'qlcolorcode'
