@@ -14,7 +14,8 @@ $ cd ~/.dotfiles
 $ sh install.sh
 ```
 
-## Init dotfiles 
+## How to
+### Init dotfiles 
 ```
 $ mkdir ~/.dotfiles
 $ cd ~/.dotfiles
@@ -25,7 +26,7 @@ $ git commit -m "Added initial README."
 $ git push -u origin master
 ```
 
-## global ignore (.gitignore_global)
+### global ignore (.gitignore_global)
 
 ```
 *~
@@ -37,5 +38,7 @@ node_modules
 bower_components
 npm-debug.log
 ```
-## setup brew & zsh, macos
+### setup brew & zsh, macos
 * check config .macos, Brewfile, .zshrc, mackup.cfg files
+
+### setup zsh, aliash
