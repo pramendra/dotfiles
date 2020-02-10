@@ -42,3 +42,11 @@ npm-debug.log
 * check config .macos, Brewfile, .zshrc, mackup.cfg files
 
 ### setup zsh, aliash
+
+
+### install app manually
+```
+TG Pro 2.46
+gfxCardStatus-2.3
+Turbo+Boost+Switcher_2.8.0
+```

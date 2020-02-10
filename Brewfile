@@ -65,6 +65,7 @@ cask 'mysqlworkbench'
 cask 'ngrok'
 cask 'postman'
 cask 'screenflow'
+cask 'sequel-pro'
 cask 'sip'
 cask 'sketch'
 cask 'skype'
@@ -81,6 +82,7 @@ cask 'virtualbox' # Might need to allow access in Security settings
 cask 'virtualbox-extension-pack'
 cask 'vlc'
 cask 'whatsapp'
+
 
 # Quicklook
 cask 'qlcolorcode'
