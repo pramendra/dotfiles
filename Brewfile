@@ -63,6 +63,7 @@ cask 'iterm2'
 cask 'java'
 cask 'mysqlworkbench'
 cask 'ngrok'
+cask 'notion'
 cask 'postman'
 cask 'screenflow'
 cask 'sequel-pro'
@@ -82,7 +83,6 @@ cask 'virtualbox' # Might need to allow access in Security settings
 cask 'virtualbox-extension-pack'
 cask 'vlc'
 cask 'whatsapp'
-
 
 # Quicklook
 cask 'qlcolorcode'
