@@ -44,6 +44,9 @@ brew 'redis'
 brew 'yarn'
 brew 'zsh'
 
+brew 'rbenv'
+brew 'ruby-build'
+
 # Apps
 cask '1password'
 cask 'aerial'
