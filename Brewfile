@@ -46,6 +46,7 @@ brew 'zsh'
 
 brew 'rbenv'
 brew 'ruby-build'
+brew '1password-cli	'
 
 # Apps
 cask '1password'

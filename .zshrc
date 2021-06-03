@@ -135,4 +135,5 @@ unset __conda_setup
 
 export PATH="/usr/local/opt/yq@3/bin:$PATH"
 export PATH=$HOME/ubie/eng-tools:$PATH
+export PATH=$HOME/ubie/tools:$PATH
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/ubie/eng-tools/local-sa-key.json
