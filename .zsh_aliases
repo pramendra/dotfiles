@@ -8,7 +8,7 @@ alias gl='git log'
 alias glo='git log --pretty=oneline'
 alias glu="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 alias glg="git log --decorate --graph --abbrev-commit --date=relative"
-alias gh='git checkout'
+# alias gh='git checkout'
 alias gt='git tag'
 alias grs='git reset'
 alias grv='git revert'
@@ -17,7 +17,7 @@ alias gd='git diff'
 alias gp='git push'
 alias gpo='git push origin'
 alias gob='git checkout -b'
-alias gh='cat .git/HEAD'
+# alias gh='cat .git/HEAD'
 alias grgu='git remote get-url'
 
 alias gbb="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
