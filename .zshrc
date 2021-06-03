@@ -113,3 +113,26 @@ export LANG=en_US.UTF-8
   # NVM
   export NVM_DIR=~/.nvm
   source $(brew --prefix nvm)/nvm.sh
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+export PATH="$PATH:$HOME/development/flutter/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="/usr/local/opt/yq@3/bin:$PATH"
+export PATH=$HOME/ubie/eng-tools:$PATH
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/ubie/eng-tools/local-sa-key.json
