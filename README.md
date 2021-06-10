@@ -1,21 +1,29 @@
 # Pramendra's dotfiles repository
 
-## setup github
+## Seup Dev Environment
+
+### Install default app  
 ```
-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+$ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ chmod +x install.sh
+$ ./install.sh
+```
+
+### Setup Github
+```
+$ ssh-keygen -t rsa -b 4096 -C "pramendra@example.com"
 $ pbcopy < ~/.ssh/id_rsa.pub
 ```
+Paste key 
+https://github.com/settings/gpg/new
+Ref
 https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
 
-## Install 
-```
-$ git clone git@github.com:pramendra/dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ sh install.sh
-```
 
-## How to
-### Init dotfiles 
+## How to setup dotfiles
+
+### Create git repo 
 ```
 $ mkdir ~/.dotfiles
 $ cd ~/.dotfiles
@@ -26,8 +34,7 @@ $ git commit -m "Added initial README."
 $ git push -u origin master
 ```
 
-### global ignore (.gitignore_global)
-
+### Add global ignore (.gitignore_global)
 ```
 *~
 ._*
@@ -41,12 +48,3 @@ npm-debug.log
 ### setup brew & zsh, macos
 * check config .macos, Brewfile, .zshrc, mackup.cfg files
 
-### setup zsh, aliash
-
-
-### install app manually
-```
-TG Pro 2.46
-gfxCardStatus-2.3
-Turbo+Boost+Switcher_2.8.0
-```

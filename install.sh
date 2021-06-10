@@ -24,4 +24,5 @@ ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 # We will run this last because this will reload the shell
 source .macos
 # setup ohmyzsh via antigen
-source install_zsh.sh
+chmod +x install_zsh.sh
+./install_zsh.sh
