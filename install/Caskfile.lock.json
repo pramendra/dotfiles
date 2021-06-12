@@ -233,6 +233,30 @@
         "options": {
           "full_name": "qlvideo"
         }
+      },
+      "font-jetbrains-mono": {
+        "version": "2.225",
+        "options": {
+          "full_name": "font-jetbrains-mono"
+        }
+      },
+      "google-drive": {
+        "version": "48.0.13",
+        "options": {
+          "full_name": "google-drive"
+        }
+      },
+      "iterm2": {
+        "version": "3.4.8",
+        "options": {
+          "full_name": "iterm2"
+        }
+      },
+      "notion": {
+        "version": "2.0.17",
+        "options": {
+          "full_name": "notion"
+        }
       }
     }
   },
@@ -241,7 +265,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.1.12",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "2e25c708a3f396feb76dd5d9ce74e1641378aa85",
+        "Homebrew/homebrew-core": "7392a07255bbc976641fe434b4bdd126eb2288f2",
         "CLT": "12.5.0.0.1.1617976050",
         "Xcode": "12.5",
         "macOS": "11.4"
