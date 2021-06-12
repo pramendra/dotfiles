@@ -337,6 +337,11 @@ defaults write com.apple.terminal "Default Window Settings" -string "Pro"
 defaults write com.apple.terminal "Startup Window Settings" -string "Pro"
 defaults write com.apple.Terminal ShowLineMarks -int 0
 
+
+  defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+  defaults write com.googlecode.iterm2 HideTab -bool true
+  defaults write com.googlecode.iterm2 "FiraCode" -string "SourceCodePro-Retina"
+  
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
