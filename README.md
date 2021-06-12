@@ -37,6 +37,16 @@ xcode-select --install
 
 The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS). Now there are two options:
 
+
+### Install Pre-Requirements
+
+  [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+Then, 
 1. Install this repo with `curl` available:
 
 ```bash
@@ -45,7 +55,7 @@ bash -c "`curl -fsSL https://raw.githubusercontent.com/pramendra/dotfiles/master
 
 This will clone or download, this repo to `~/.dotfiles` depending on the availability of `git`, `curl` or `wget`.
 
-1. Alternatively, clone manually into the desired location:
+2. Alternatively, clone manually into the desired location:
 
 ```bash
 git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles

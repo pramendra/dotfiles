@@ -1,6 +1,8 @@
 # Shortcuts
 
-alias reload="source ~/.bash_profile"
+# alias reload="source ~/.bash_profile"
+alias reload="source ~/.zshrc"
+
 alias _="sudo"
 alias g="git"
 alias rr="rm -rf"
@@ -25,6 +27,8 @@ fi
 alias aliases="alias | sed 's/=.*//'"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias paths='echo -e ${PATH//:/\\n}'
+alias show_options='shopt'                  # Show_options: display bash options settings
+alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
 
 # Directory listing/traversal
 
@@ -46,6 +50,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"                  # Go to previous dir with -
 alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is linked)
+alias notes='$EDITOR ~/daily-notes/`date "+%Y-%m-%d"`.md'
 
 # npm
 

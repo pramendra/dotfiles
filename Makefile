@@ -1,4 +1,4 @@
-SHELL = /bin/bash
+SHELL = /bin/zsh # SHELL = /bin/bash
 DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 OS := $(shell bin/is-supported bin/is-macos macos linux)
 PATH := $(DOTFILES_DIR)/bin:$(PATH)
@@ -15,7 +15,7 @@ macos: sudo core-macos packages link
 
 linux: core-linux link
 
-core-macos: brew bash git npm ruby
+core-macos: brew git npm ruby #core-macos: brew bash git npm ruby
 
 core-linux:
 	apt-get update
@@ -52,9 +52,15 @@ unlink: stow-$(OS)
 brew:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
-bash: BASH=/usr/local/bin/bash
-bash: SHELLS=/private/etc/shells
-bash: brew
+# bash: BASH=/usr/local/bin/bash
+# bash: SHELLS=/private/etc/shells
+# bash: brew
+
+zsh: ZSH=/usr/local/bin/zsh
+zsh: SHELLS=/private/etc/shells
+zsh: brew
+	if ! grep -q $(ZSH) $(SHELLS); then brew install zsh zsh-completion pcre && sudo append $(ZSH) $(SHELLS) && chsh -s $(ZSH); fi
+
 ifdef GITHUB_ACTION
 	if ! grep -q $(BASH) $(SHELLS); then \
 		brew install bash bash-completion@2 pcre && \
