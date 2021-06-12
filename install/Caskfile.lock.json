@@ -1,0 +1,251 @@
+{
+  "entries": {
+    "tap": {
+      "homebrew/cask": {
+        "revision": "27b2ab9aa73820947a5b76a8c6ceaf0c163fdbe3"
+      },
+      "homebrew/cask-drivers": {
+        "revision": "87ec9c9700f44e05e3e5d0a8f8e8656308595fe0"
+      },
+      "homebrew/cask-fonts": {
+        "revision": "d0cdeeada58dd1aeed60dc55ec81a9448f11b9b1"
+      },
+      "homebrew/cask-versions": {
+        "revision": "22261ac0a28af7a3bd6bacf1836ee3649c3bd555"
+      },
+      "adoptopenjdk/openjdk": {
+        "revision": "3e6ed3cb423ac9ce63aeb1e01d0371cd588db987"
+      }
+    },
+    "cask": {
+      "dash2": {
+        "version": "2.2.6",
+        "options": {
+          "full_name": "dash2"
+        }
+      },
+      "dropbox": {
+        "version": "124.4.4912",
+        "options": {
+          "full_name": "dropbox"
+        }
+      },
+      "firefox": {
+        "version": "89.0",
+        "options": {
+          "full_name": "firefox"
+        }
+      },
+      "font-fira-code": {
+        "version": "5.2",
+        "options": {
+          "full_name": "font-fira-code"
+        }
+      },
+      "font-hack": {
+        "version": "3.003",
+        "options": {
+          "full_name": "font-hack"
+        }
+      },
+      "glimmerblocker": {
+        "version": "1.6.6",
+        "options": {
+          "full_name": "glimmerblocker"
+        }
+      },
+      "google-backup-and-sync": {
+        "version": "3.54.3529.0458",
+        "options": {
+          "full_name": "google-backup-and-sync"
+        }
+      },
+      "google-chrome": {
+        "version": "91.0.4472.101",
+        "options": {
+          "full_name": "google-chrome"
+        }
+      },
+      "google-chrome-canary": {
+        "version": "93.0.4539.2",
+        "options": {
+          "full_name": "google-chrome-canary"
+        }
+      },
+      "hammerspoon": {
+        "version": "0.9.90",
+        "options": {
+          "full_name": "hammerspoon"
+        }
+      },
+      "kaleidoscope": {
+        "version": "2.4.1,1453:apr-6-2021",
+        "options": {
+          "full_name": "kaleidoscope"
+        }
+      },
+      "maccy": {
+        "version": "0.20.1,6",
+        "options": {
+          "full_name": "maccy"
+        }
+      },
+      "macdown": {
+        "version": "0.7.2",
+        "options": {
+          "full_name": "macdown"
+        }
+      },
+      "postman": {
+        "version": "8.6.1",
+        "options": {
+          "full_name": "postman"
+        }
+      },
+      "slack": {
+        "version": "4.17.0",
+        "options": {
+          "full_name": "slack"
+        }
+      },
+      "sourcetree": {
+        "version": "4.1.2,238",
+        "options": {
+          "full_name": "sourcetree"
+        }
+      },
+      "spotify": {
+        "version": "1.1.60.672.g6ad9c215,1.1.60.672.g6ad9c215-15",
+        "options": {
+          "full_name": "spotify"
+        }
+      },
+      "virtualbox": {
+        "version": "6.1.22,144080",
+        "options": {
+          "full_name": "virtualbox"
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.57.0",
+        "options": {
+          "full_name": "visual-studio-code"
+        }
+      },
+      "vlc": {
+        "version": "3.0.15",
+        "options": {
+          "full_name": "vlc"
+        }
+      },
+      "brave-browser": {
+        "version": "91.1.25.72,125.72",
+        "options": {
+          "full_name": "brave-browser"
+        }
+      },
+      "docker": {
+        "version": "3.4.0,65384",
+        "options": {
+          "full_name": "docker"
+        }
+      },
+      "figma": {
+        "version": "98.13.0",
+        "options": {
+          "full_name": "figma"
+        }
+      },
+      "1password": {
+        "version": "7.8.5",
+        "options": {
+          "full_name": "1password"
+        }
+      },
+      "1password-cli": {
+        "version": "1.10.2",
+        "options": {
+          "full_name": "1password-cli"
+        }
+      },
+      "github": {
+        "version": "2.8.3-dee35666",
+        "options": {
+          "full_name": "github"
+        }
+      },
+      "flux": {
+        "version": "41.4",
+        "options": {
+          "full_name": "flux"
+        }
+      },
+      "adoptopenjdk11": {
+        "version": "11.0.11,9",
+        "options": {
+          "full_name": "adoptopenjdk11"
+        }
+      },
+      "qlcolorcode": {
+        "version": "4.1.0",
+        "options": {
+          "full_name": "qlcolorcode"
+        }
+      },
+      "qlstephen": {
+        "version": "1.5.1",
+        "options": {
+          "full_name": "qlstephen"
+        }
+      },
+      "qlmarkdown": {
+        "version": "1.3.6",
+        "options": {
+          "full_name": "qlmarkdown"
+        }
+      },
+      "quicklook-json": {
+        "version": "latest",
+        "options": {
+          "full_name": "quicklook-json"
+        }
+      },
+      "qlimagesize": {
+        "version": "2.6.1",
+        "options": {
+          "full_name": "qlimagesize"
+        }
+      },
+      "suspicious-package": {
+        "version": "3.7,773",
+        "options": {
+          "full_name": "suspicious-package"
+        }
+      },
+      "quicklookase": {
+        "version": "1.0",
+        "options": {
+          "full_name": "quicklookase"
+        }
+      },
+      "qlvideo": {
+        "version": "1.94",
+        "options": {
+          "full_name": "qlvideo"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.1.12",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "802d75342458f196fdc66c3e9282d33fcd7697a4",
+        "CLT": "12.5.0.0.1.1617976050",
+        "Xcode": "12.5",
+        "macOS": "11.4"
+      }
+    }
+  }
+}
