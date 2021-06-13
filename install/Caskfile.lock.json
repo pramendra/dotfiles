@@ -2,16 +2,16 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "160ae337ac8d47e8704341dbc3aac7cea35140cf"
+        "revision": "85b5849bc9a8f25f57a88dde18379d3b11b76072"
       },
       "homebrew/cask-drivers": {
         "revision": "87ec9c9700f44e05e3e5d0a8f8e8656308595fe0"
       },
       "homebrew/cask-fonts": {
-        "revision": "d0cdeeada58dd1aeed60dc55ec81a9448f11b9b1"
+        "revision": "56b5f04cc3904df158fa632c3776943d3e8177c2"
       },
       "homebrew/cask-versions": {
-        "revision": "22261ac0a28af7a3bd6bacf1836ee3649c3bd555"
+        "revision": "7e1cec74e4e24b262f6add135b772fd0b57f63e3"
       },
       "adoptopenjdk/openjdk": {
         "revision": "3e6ed3cb423ac9ce63aeb1e01d0371cd588db987"
@@ -67,7 +67,7 @@
         }
       },
       "google-chrome-canary": {
-        "version": "93.0.4539.2",
+        "version": "93.0.4540.0",
         "options": {
           "full_name": "google-chrome-canary"
         }
@@ -265,7 +265,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.1.12",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "5414bded124eafa7f8f73acb717fa234fb8d708c",
+        "Homebrew/homebrew-core": "53f83d12aac94217ef395a23268b1ce99267aabf",
         "CLT": "12.5.0.0.1.1617976050",
         "Xcode": "12.5",
         "macOS": "11.4"
