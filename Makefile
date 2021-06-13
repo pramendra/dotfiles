@@ -99,6 +99,7 @@ cask-apps: brew
 	defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
 	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
 	xattr -d -r com.apple.quarantine ~/Library/QuickLook
+	. "$(shell brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh"
 
 node-packages: npm
 	. $(NVM_DIR)/nvm.sh; npm install -g $(shell cat install/npmfile)
