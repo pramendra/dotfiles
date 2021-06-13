@@ -4,15 +4,15 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap 'AdoptOpenJDK/openjdk'
 
+# cask "toggl"
 cask '1password-cli'
-cask '1password'
 cask 'adoptopenjdk11'
 cask 'docker'
 cask 'figma'
 cask 'flux'
 cask 'github'
 cask "brave-browser"
-cask "dash2"
+cask "dash"
 cask "dropbox"
 cask "firefox"
 cask "font-fira-code"
@@ -30,7 +30,8 @@ cask "maccy"
 cask "macdown"
 cask "notion"
 cask "postman"
-cask "slack"
+cask "sequel-pro"
+cask "sourcetree"
 cask "sourcetree"
 cask "spotify"
 cask "virtualbox"

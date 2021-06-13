@@ -8,7 +8,7 @@
         "revision": "5b6fa2f5fe5df3ff2cc5436045e1934b9be4ac13"
       },
       "homebrew/core": {
-        "revision": "5414bded124eafa7f8f73acb717fa234fb8d708c"
+        "revision": "fec7cb7844fed4732d50494d341b266f0ea1ef24"
       }
     },
     "brew": {
@@ -793,6 +793,25 @@
           }
         }
       }
+    },
+    "mas": {
+      "Slack": {
+        "id": "803453959",
+        "version": "4.17.0"
+      },
+      "LINE": {
+        "id": "539883307",
+        "version": "7.0.1"
+      },
+      "Keynote": {
+        "id": "409183694",
+        "version": "11.1"
+      },
+      "Numbers": {
+        "id": "409203825",
+        "version": "11.1"
+      },
+      "todoist": null
     }
   },
   "system": {
@@ -800,7 +819,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.1.12",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "5414bded124eafa7f8f73acb717fa234fb8d708c",
+        "Homebrew/homebrew-core": "fec7cb7844fed4732d50494d341b266f0ea1ef24",
         "CLT": "12.5.0.0.1.1617976050",
         "Xcode": "12.5",
         "macOS": "11.4"
