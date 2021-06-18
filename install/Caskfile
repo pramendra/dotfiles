@@ -13,6 +13,7 @@ cask 'flux'
 cask 'github'
 cask "brave-browser"
 cask "dash"
+cask "deepl"
 cask "dropbox"
 cask "firefox"
 cask "font-fira-code"

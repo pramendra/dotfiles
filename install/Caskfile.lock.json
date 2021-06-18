@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "a453ee20be9943dbd40795051bfb045628e2e63a"
+        "revision": "584fea736a8cb820d38bcc0632a0ae3ebb9218d8"
       },
       "homebrew/cask-drivers": {
         "revision": "87ec9c9700f44e05e3e5d0a8f8e8656308595fe0"
@@ -268,6 +268,12 @@
         "version": "1.1.2",
         "options": {
           "full_name": "sequel-pro"
+        }
+      },
+      "deepl": {
+        "version": "2.4.50523",
+        "options": {
+          "full_name": "deepl"
         }
       }
     }
