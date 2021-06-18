@@ -2,16 +2,16 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "584fea736a8cb820d38bcc0632a0ae3ebb9218d8"
+        "revision": "c5c7b39098d4608432fa58c513b7290fe19c67d1"
       },
       "homebrew/cask-drivers": {
-        "revision": "87ec9c9700f44e05e3e5d0a8f8e8656308595fe0"
+        "revision": "98943ff5e2f3e484a9d701d3cccae15ffd49bf26"
       },
       "homebrew/cask-fonts": {
         "revision": "56b5f04cc3904df158fa632c3776943d3e8177c2"
       },
       "homebrew/cask-versions": {
-        "revision": "7e1cec74e4e24b262f6add135b772fd0b57f63e3"
+        "revision": "a1daf75abd3f394902dfbb5888fc0be739267f90"
       },
       "adoptopenjdk/openjdk": {
         "revision": "3e6ed3cb423ac9ce63aeb1e01d0371cd588db987"
@@ -31,7 +31,7 @@
         }
       },
       "firefox": {
-        "version": "89.0",
+        "version": "89.0.1",
         "options": {
           "full_name": "firefox"
         }
@@ -61,13 +61,13 @@
         }
       },
       "google-chrome": {
-        "version": "91.0.4472.101",
+        "version": "91.0.4472.114",
         "options": {
           "full_name": "google-chrome"
         }
       },
       "google-chrome-canary": {
-        "version": "93.0.4540.0",
+        "version": "93.0.4544.0",
         "options": {
           "full_name": "google-chrome-canary"
         }
@@ -97,7 +97,7 @@
         }
       },
       "postman": {
-        "version": "8.6.1",
+        "version": "8.6.2",
         "options": {
           "full_name": "postman"
         }
@@ -115,7 +115,7 @@
         }
       },
       "spotify": {
-        "version": "1.1.60.672.g6ad9c215,1.1.60.672.g6ad9c215-15",
+        "version": "1.1.61.583.gad060c66,1.1.61.583.gad060c66-7",
         "options": {
           "full_name": "spotify"
         }
@@ -127,19 +127,19 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.57.0",
+        "version": "1.57.1",
         "options": {
           "full_name": "visual-studio-code"
         }
       },
       "vlc": {
-        "version": "3.0.15",
+        "version": "3.0.14",
         "options": {
           "full_name": "vlc"
         }
       },
       "brave-browser": {
-        "version": "91.1.25.72,125.72",
+        "version": "91.1.25.73,125.73",
         "options": {
           "full_name": "brave-browser"
         }
@@ -169,7 +169,7 @@
         }
       },
       "github": {
-        "version": "2.8.3-dee35666",
+        "version": "2.9.0-4806a6dc",
         "options": {
           "full_name": "github"
         }
@@ -275,6 +275,12 @@
         "options": {
           "full_name": "deepl"
         }
+      },
+      "intellij-idea": {
+        "version": "2021.1.2,211.7442.40",
+        "options": {
+          "full_name": "intellij-idea"
+        }
       }
     }
   },
@@ -283,7 +289,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.1.12",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "fec7cb7844fed4732d50494d341b266f0ea1ef24",
+        "Homebrew/homebrew-core": "d3df5015f5ec3cd7ef802d9fa71f816f6bf69122",
         "CLT": "12.5.0.0.1.1617976050",
         "Xcode": "12.5",
         "macOS": "11.4"
