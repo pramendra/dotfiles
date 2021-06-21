@@ -12,6 +12,7 @@ brew "fasd"
 brew "ffmpeg"
 brew "gh"
 brew "gnu-sed"
+brew "gnupg"
 brew "goles/battery/battery"
 brew "grep"
 brew "grip"
@@ -31,6 +32,7 @@ brew "stow"
 brew "thefuck"
 brew "tree"
 brew "wget"
+
 
 mas '1Password7', id: 1333542190
 mas 'Feedly', id: 865500966

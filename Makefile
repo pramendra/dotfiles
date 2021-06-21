@@ -44,6 +44,7 @@ link: stow-$(OS)
 	mkdir -p $(XDG_CONFIG_HOME)
 	stow -t $(HOME) runcom
 	stow -t $(XDG_CONFIG_HOME) config
+	ln -s $(STOW_DIR)/.config/config $(HOME)/.gitconfig  
 	for FILE in $$(\ls -A VSCode); do if [ -f $(VSCODE_CONFIG_HOME_MACOS)/$$FILE -a ! -h $(VSCODE_CONFIG_HOME_MACOS)/$$FILE ]; then \
 		mv -v $(VSCODE_CONFIG_HOME_MACOS)/$$FILE{,.bak}; fi; done
 	stow -v -t $(VSCODE_CONFIG_HOME_MACOS) VSCode
@@ -51,12 +52,13 @@ link: stow-$(OS)
 unlink: stow-$(OS)
 	stow --delete -t $(HOME) runcom
 	stow --delete -t $(XDG_CONFIG_HOME) config
+	rm -rf $(HOME)/.gitconfig
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then \
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 	# todo: unlink VSCode
 
 brew:
-	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash	
 
 # bash: BASH=/usr/local/bin/bash
 # bash: SHELLS=/private/etc/shells
@@ -90,6 +92,8 @@ npm:
 
 ruby: brew
 	brew install ruby
+	is-executable rvm || gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys | bash
+	is-executable rvm || curl -sSL https://get.rvm.io | bash -s stable --rails
 
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
