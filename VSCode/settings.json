@@ -1,7 +1,6 @@
 {
   // "workbench.colorTheme": "Tokyo Night Storm",
   "editor.fontFamily": "Fira Code Retina, JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 12,
   // "editor.letterSpacing": 1,
   "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.minimap.renderCharacters": false,
@@ -46,5 +45,6 @@
     "[ ]",
     "[x]"
   ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "workbench.colorTheme": "Monokai"
 }
