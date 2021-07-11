@@ -9,7 +9,7 @@ cask '1password-cli'
 cask 'adoptopenjdk11'
 cask 'docker'
 cask 'figma'
-cask 'flux'
+# cask 'flux'
 cask 'github'
 cask "brave-browser"
 cask "dash"
