@@ -46,5 +46,19 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Monokai"
+  "window.zoomLevel": -2,
+  "editor.fontSize": 20,
+  "terminal.integrated.fontSize": 16,
+  "workbench.startupEditor": "none",
+  "dart.hotReloadOnSave": "always",
+  "dart.flutterHotReloadOnSave": "always",
+  "files.autoSave": "afterDelay",
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": false
 }
