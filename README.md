@@ -63,6 +63,12 @@ and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
 cd ~/.dotfiles
 make
 ```
+##### debug command not found: brew
+```
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/pramendra/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+```
 
 The installation process in the Makefile is tested on every push and every week in this
 [GitHub Action](https://github.com/pramendra/dotfiles/actions).
