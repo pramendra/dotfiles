@@ -40,25 +40,31 @@ The Xcode Command Line Tools includes `git` and `make` (not available on stock m
 
 ### Install Pre-Requirements
 
-  [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+#### [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-```
+```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 
-Clone this repo:
+#### Clone following repo:
 
-```git clone https://github.com/spaceship-prompt/spaceship-prompt.git
-"$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1```
+```bash
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+```
 
-Symlink spaceship.zsh-theme to your oh-my-zsh custom themes directory:
+#### Symlink spaceship.zsh-theme to your oh-my-zsh custom themes directory:
 
-``` ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"```
+```bash
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
+
+#### Change Theme
+```
 Set ZSH_THEME="spaceship" in your .zshrc.
+```
 
-Then, 
-1. Install this repo with `curl` available:
+### Install pramendra dotfiles:
 
 ```bash
 bash -c "`curl -fsSL https://raw.githubusercontent.com/pramendra/dotfiles/master/remote-install.sh`"
