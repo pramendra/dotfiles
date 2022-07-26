@@ -1,31 +1,5 @@
 # .dotfiles
 
-These are my dotfiles. Take anything you want, but at your own risk.
-
-It mainly targets macOS systems, but it works on at least Ubuntu as well.
-
-## Highlights
-
-- Minimal efforts to install everything, using a [Makefile](./Makefile)
-- Mostly based around Homebrew, Caskroom and Node.js, latest Bash + GNU Utils
-- Great [Window management](./config/hammerspoon/README.md) (using Hammerspoon)
-- Fast and colored prompt
-- Updated macOS defaults
-- Well-organized and easy to customize
-- The installation and runcom setup is
-  [tested weekly on real Ubuntu and macOS machines](https://github.com/pramendra/dotfiles/actions) using
-  [a GitHub Action](./.github/workflows/ci.yml)
-
-## Packages Overview
-
-- [Homebrew](https://brew.sh) (packages: [Brewfile](./install/Brewfile))
-- [homebrew-cask](https://github.com/Homebrew/homebrew-cask) (packages: [Caskfile](./install/Caskfile))
-- [Node.js + npm LTS](https://nodejs.org/en/download/) (packages: [npmfile](./install/npmfile))
-- Latest Git, Bash 4, Python 3, GNU coreutils, curl, Ruby
-- [Hammerspoon](https://www.hammerspoon.org) (config: [keybindings & window management](./config/hammerspoon))
-- [Mackup](https://github.com/lra/mackup) (sync application settings)
-- `$EDITOR` (and Git editor) is [GNU nano](https://www.nano-editor.org)
-
 ## Installation
 
 On a sparkling fresh installation of macOS:
@@ -46,7 +20,6 @@ The Xcode Command Line Tools includes `git` and `make` (not available on stock m
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-
 #### Clone following repo:
 
 ```bash
@@ -59,20 +32,24 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ```
 
-#### Change Theme
+#### Update Theme in ~/.zshrc
 ```
-Set ZSH_THEME="spaceship" in your .zshrc.
+ZSH_THEME="spaceship" 
+```
+Reload source
+```bash
+source ~/.zshrc
 ```
 
-### Install pramendra dotfiles:
+### Install pramendra dotfiles
 
+#### Clone dotfiles
 ```bash
 bash -c "`curl -fsSL https://raw.githubusercontent.com/pramendra/dotfiles/master/remote-install.sh`"
 ```
+Cloned to `~/.dotfiles`
 
-This will clone or download, this repo to `~/.dotfiles` depending on the availability of `git`, `curl` or `wget`.
-
-2. Alternatively, clone manually into the desired location:
+##### Alternatively, clone manually into the desired location:
 
 ```bash
 git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
@@ -81,6 +58,7 @@ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
 Use the [Makefile](./Makefile) to install everything [listed above](#package-overview), and symlink [runcom](./runcom)
 and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
 
+#### Install dotfiles
 ```bash
 cd ~/.dotfiles
 make
