@@ -1,8 +1,14 @@
 # .dotfiles
 
-## Installation
+These are my dotfiles. Take anything you want, but at your own risk.
 
-On a sparkling fresh installation of macOS:
+It mainly targets macOS systems, but it works on at least Ubuntu as well.
+
+# Installation
+
+## Preinstall
+
+### On a sparkling fresh installation of macOS:
 
 ```bash
 sudo softwareupdate -i -a
@@ -11,37 +17,13 @@ xcode-select --install
 
 The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS). Now there are two options:
 
-
-### Install Pre-Requirements
-
-#### [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+## Clone the repository
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
 ```
 
-#### Clone following repo:
-
-```bash
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-```
-
-#### Symlink spaceship.zsh-theme to your oh-my-zsh custom themes directory:
-
-```bash
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-```
-
-#### Update Theme in ~/.zshrc
-```
-ZSH_THEME="spaceship" 
-```
-Reload source
-```bash
-source ~/.zshrc
-```
-
-### Install pramendra dotfiles
+### alternative using curl
 
 #### Clone dotfiles
 ```bash
@@ -49,29 +31,18 @@ bash -c "`curl -fsSL https://raw.githubusercontent.com/pramendra/dotfiles/master
 ```
 Cloned to `~/.dotfiles`
 
-##### Alternatively, clone manually into the desired location:
+## Install via make
 
 ```bash
-git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ make
 ```
 
-Use the [Makefile](./Makefile) to install everything [listed above](#package-overview), and symlink [runcom](./runcom)
-and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
+# Features
 
-#### Install dotfiles
-```bash
-cd ~/.dotfiles
-make
 ```
-##### debug command not found: brew
+brew, npm, oh-my-zsh
 ```
-- Run these two commands in your terminal to add Homebrew to your PATH:
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/pramendra/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-The installation process in the Makefile is tested on every push and every week in this
-[GitHub Action](https://github.com/pramendra/dotfiles/actions).
 
 ## Post-Installation
 
@@ -97,22 +68,6 @@ Commands:
     test             Run tests
     update           Update packages and pkg managers (OS, brew, npm, gem)
 ```
-
-## Customize
-
-You can put your custom settings, such as Git credentials in the `system/.custom` file which will be sourced from
-`.bash_profile` automatically. This file is in `.gitignore`.
-
-Alternatively, you can have an additional, personal dotfiles repo at `~/.extra`. The runcom `.bash_profile` sources all
-`~/.extra/runcom/*.sh` files.
-
-## Additional Resources
-
-- [Awesome Dotfiles](https://github.com/pramendra/awesome-dotfiles)
-- [Homebrew](https://brew.sh)
-- [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)
-- [Bash prompt](https://wiki.archlinux.org/index.php/Color_Bash_Prompt)
-- [Solarized Color Theme for GNU ls](https://github.com/seebi/dircolors-solarized)
 
 ## Credits
 

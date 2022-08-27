@@ -1,13 +1,15 @@
-SHELL = /bin/zsh # SHELL = /bin/bash
+SHELL = /bin/bash
 DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 OS := $(shell bin/is-supported bin/is-macos macos linux)
 PATH := $(DOTFILES_DIR)/bin:$(PATH)
-NVM_DIR := $(HOME)/.nvm
+HOMEBREW_PREFIX := $(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local)
+
 export XDG_CONFIG_HOME = $(HOME)/.config
 export STOW_DIR = $(DOTFILES_DIR)
 export ACCEPT_EULA=Y
+
+NVM_DIR := $(HOME)/.nvm
 VSCODE_CONFIG_HOME_MACOS := $(HOME)/Library/Application\ Support/Code/User
-# VSCODE_CONFIG_HOME_LINUX := $(HOME)/.config/Code/User
 
 .PHONY: test
 
@@ -17,7 +19,7 @@ macos: sudo core-macos packages link
 
 linux: core-linux link
 
-core-macos: brew git npm ruby #core-macos: brew bash git npm ruby
+core-macos: brew git npm ruby
 
 core-linux:
 	apt-get update
@@ -44,7 +46,7 @@ link: stow-$(OS)
 	mkdir -p $(XDG_CONFIG_HOME)
 	stow -t $(HOME) runcom
 	stow -t $(XDG_CONFIG_HOME) config
-	ln -s $(STOW_DIR)/.config/config $(HOME)/.gitconfig  
+
 	for FILE in $$(\ls -A VSCode); do if [ -f $(VSCODE_CONFIG_HOME_MACOS)/$$FILE -a ! -h $(VSCODE_CONFIG_HOME_MACOS)/$$FILE ]; then \
 		mv -v $(VSCODE_CONFIG_HOME_MACOS)/$$FILE{,.bak}; fi; done
 	stow -v -t $(VSCODE_CONFIG_HOME_MACOS) VSCode
@@ -55,20 +57,15 @@ unlink: stow-$(OS)
 	rm -rf $(HOME)/.gitconfig
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then \
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
-	# todo: unlink VSCode
+	for FILE in $$(\ls -A VSCode); do if [ -f $(VSCODE_CONFIG_HOME_LINUX)/$$FILE -a ! -h $(VSCODE_CONFIG_HOME_LINUX)/$$FILE ]; then \
+		mv -v $(VSCODE_CONFIG_HOME_LINUX)/$$FILE{,.bak}; fi; done
 
+# core
 brew:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash	
-
-# bash: BASH=/usr/local/bin/bash
-# bash: SHELLS=/private/etc/shells
-# bash: brew
-
-zsh: ZSH=/usr/local/bin/zsh
-zsh: SHELLS=/private/etc/shells
-zsh: brew
-	if ! grep -q $(ZSH) $(SHELLS); then brew install zsh zsh-completion pcre && sudo append $(ZSH) $(SHELLS) && chsh -s $(ZSH); fi
-
+bash: BASH=$(HOMEBREW_PREFIX)/bin/bash
+bash: SHELLS=/private/etc/shells
+bash: brew
 ifdef GITHUB_ACTION
 	if ! grep -q $(BASH) $(SHELLS); then \
 		brew install bash bash-completion@2 pcre && \
@@ -92,9 +89,11 @@ npm:
 
 ruby: brew
 	brew install ruby
-	is-executable rvm || gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys | bash
-	is-executable rvm || curl -sSL https://get.rvm.io | bash -s stable --rails
+	# TODO: install rvm
+	# is-executable rvm || gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys | bash
+	# is-executable rvm || curl -sSL https://get.rvm.io | bash -s stable --rails
 
+# packages
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
@@ -103,10 +102,9 @@ cask-apps: brew
 	defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
 	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
 	xattr -d -r com.apple.quarantine ~/Library/QuickLook
-	# . "$(shell brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/install.sh"
 
 node-packages: npm
 	. $(NVM_DIR)/nvm.sh; npm install -g $(shell cat install/npmfile)
 
 test:
-	. $(NVM_DIR)/nvm.sh; bats test
+	eval $$(fnm env); bats test

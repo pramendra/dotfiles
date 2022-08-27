@@ -135,8 +135,8 @@ prompt default
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-# Set Spaceship ZSH as a prompt
-fpath=($fpath "/Users/pramendra/.zfunctions")
+
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
+fpath=($fpath "/Users/pramendra/.zfunctions")
