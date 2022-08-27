@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "c5c7b39098d4608432fa58c513b7290fe19c67d1"
+        "revision": "f74d4737a1d211148255d2c6d771a949a8bb2dbf"
       },
       "homebrew/cask-drivers": {
-        "revision": "98943ff5e2f3e484a9d701d3cccae15ffd49bf26"
+        "revision": "e1a0a77ca9057a1d100e593c6c13072b52ef2625"
       },
       "homebrew/cask-fonts": {
-        "revision": "56b5f04cc3904df158fa632c3776943d3e8177c2"
+        "revision": "a3b09c967af95088957114920ff22d8376b21d38"
       },
       "homebrew/cask-versions": {
-        "revision": "a1daf75abd3f394902dfbb5888fc0be739267f90"
+        "revision": "674c2ef8c280ddb52a1921b0cb36987a8d603d99"
       },
       "adoptopenjdk/openjdk": {
-        "revision": "3e6ed3cb423ac9ce63aeb1e01d0371cd588db987"
+        "revision": "27915e4ab3856595a8b46d1fd3b6c379c1f02210"
       }
     },
     "cask": {
@@ -281,6 +281,12 @@
         "options": {
           "full_name": "intellij-idea"
         }
+      },
+      "google-cloud-sdk": {
+        "version": "latest",
+        "options": {
+          "full_name": "google-cloud-sdk"
+        }
       }
     }
   },
@@ -293,6 +299,14 @@
         "CLT": "12.5.0.0.1.1617976050",
         "Xcode": "12.5",
         "macOS": "11.4"
+      },
+      "monterey": {
+        "HOMEBREW_VERSION": "3.5.10",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "a1b87652411a9be68501e008c434cd0bfa4e6588",
+        "CLT": "13.4.0.0.1.1651278267",
+        "Xcode": "13.4.1",
+        "macOS": "12.5.1"
       }
     }
   }

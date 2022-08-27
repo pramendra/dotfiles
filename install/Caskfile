@@ -4,25 +4,18 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap 'AdoptOpenJDK/openjdk'
 
-# cask "toggl"
-cask '1password-cli'
+cask 'google-cloud-sdk'
 cask 'adoptopenjdk11'
 cask 'docker'
 cask 'figma'
-# cask 'flux'
 cask 'github'
-# cask "brave-browser"
 cask "dash"
-# cask "deepl"
 cask "dropbox"
 cask "firefox"
 cask "font-fira-code"
 cask "font-hack"
-# cask "font-jetbrains-mono"
 cask "glimmerblocker"
 cask "google-backup-and-sync"
-# cask "google-chrome-canary"
-# cask "google-chrome"
 cask "google-drive"
 cask "hammerspoon"
 cask "intellij-idea"
@@ -39,8 +32,6 @@ cask "spotify"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
-
-# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 cask "qlcolorcode"
 cask "qlstephen"
 cask "qlmarkdown"
