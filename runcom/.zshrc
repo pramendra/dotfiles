@@ -1,3 +1,6 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
 
@@ -5,16 +8,33 @@ export DOTFILES=$HOME/.dotfiles
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 
 # Enable completions
-autoload -Uz compinit && compinit
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="spaceship"
+ZSH_THEME="spaceship"
+
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stampts section
+  user          # Username section
+  host          # Hostname section
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  node          # Node.js section
+  ruby          # Ruby section
+  xcode         # Xcode section
+  swift         # Swift section
+  golang        # Go section
+  docker        # Docker section
+  venv          # virtualenv section
+  pyenv         # Pyenv section
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  char          # Prompt character
+)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,10 +96,10 @@ autoload -Uz compinit && compinit
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-source ~/.bash_profile
+plugins=(
+  git
+  docker
+)
 
 # User configuration
 
@@ -107,18 +127,16 @@ source ~/.bash_profile
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-# prompt spaceship
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+autoload -Uz promptinit
+promptinit
+prompt default
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-export PATH=$HOME/ubie/eng-tools:$PATH
-export PATH=$HOME/ubie/tools:$PATH
-export GOOGLE_APPLICATION_CREDENTIALS=$HOME/ubie/eng-tools/local-sa-key.json
+# Set Spaceship ZSH as a prompt
+fpath=($fpath "/Users/pramendra/.zfunctions")
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
