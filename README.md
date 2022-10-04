@@ -26,9 +26,11 @@ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
 ### alternative using curl
 
 #### Clone dotfiles
+
 ```bash
 bash -c "`curl -fsSL https://raw.githubusercontent.com/pramendra/dotfiles/master/remote-install.sh`"
 ```
+
 Cloned to `~/.dotfiles`
 
 ## Install via make
@@ -72,3 +74,10 @@ Commands:
 ## Credits
 
 Many thanks to the [dotfiles community](https://dotfiles.github.io).
+
+# Doctor
+
+## nvm not found
+
+$ rm -rf ~/.nvm
+$ make npm

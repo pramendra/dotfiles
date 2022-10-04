@@ -29,10 +29,10 @@ SPACESHIP_PROMPT_ORDER=(
   swift         # Swift section
   golang        # Go section
   docker        # Docker section
-  venv          # virtualenv section
-  pyenv         # Pyenv section
+  venv          # virtualenv sectionvi_mode
+  # pyenv         # Pyenv section
   line_sep      # Line break
-  vi_mode       # Vi-mode indicator
+  # vi_mode       # Vi-mode indicator
   char          # Prompt character
 )
 
@@ -98,7 +98,21 @@ SPACESHIP_PROMPT_ORDER=(
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  docker
+  bundler
+  dotenv
+  osx
+  rake
+  rbenv
+  ruby
+  jsontools
+  node
+  pip
+  web-search
+  zsh-autosuggestions
+  colored-man-pages
+  colorize
+  common-aliases
+  copyfile
 )
 
 # User configuration
@@ -128,15 +142,16 @@ plugins=(
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Set Spaceship ZSH as a prompt
 
-autoload -Uz promptinit
-promptinit
-prompt default
+# autoload -Uz promptinit
+# promptinit
+# prompt default
 
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
+source $(brew --prefix)/opt/spaceship/spaceship.zsh
+source $HOME/.nvm/nvm.sh
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# autoload -U promptinit; promptinit
+# prompt spaceship
 fpath=($fpath "/Users/pramendra/.zfunctions")
