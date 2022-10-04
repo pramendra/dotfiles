@@ -140,22 +140,18 @@ plugins=(
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# Set Spaceship ZSH as a prompt
-
-# autoload -Uz promptinit
-# promptinit
-# prompt default
 
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-source $(brew --prefix)/opt/spaceship/spaceship.zsh
-source $HOME/.nvm/nvm.sh
+source "$(brew --prefix)/opt/spaceship/spaceship.zsh"
 
 # Set Spaceship ZSH as a prompt
 # autoload -U promptinit; promptinit
 # prompt spaceship
 fpath=($fpath "/Users/pramendra/.zfunctions")
 
-if [ -f ~/.bash_profile ]; then 
-  . ~/.bash_profile;
+if [ -f $HOME/.bash_profile ]; then 
+  source $HOME/.bash_profile;
 fi
+
+source $HOME/.nvm/nvm.sh
