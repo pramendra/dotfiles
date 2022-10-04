@@ -2,6 +2,7 @@ tap "goles/battery"
 tap "homebrew/bundle"
 tap "homebrew/core"
 
+brew "fasd"
 brew "ffmpeg"
 brew "gh"
 brew "gnu-sed"

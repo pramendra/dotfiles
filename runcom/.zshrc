@@ -155,3 +155,7 @@ source $HOME/.nvm/nvm.sh
 # autoload -U promptinit; promptinit
 # prompt spaceship
 fpath=($fpath "/Users/pramendra/.zfunctions")
+
+if [ -f ~/.bash_profile ]; then 
+  . ~/.bash_profile;
+fi
