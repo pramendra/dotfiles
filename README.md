@@ -2,7 +2,21 @@
 
 These are my dotfiles. Take anything you want, but at your own risk.
 
-It mainly targets macOS systems, but it works on at least Ubuntu as well.
+It mainly targets macOS systems
+
+## Pre Installation
+
+### [Generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
+
+```bash
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+### [Adding a new SSH key to your account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)
+
+```bash
+$ pbcopy < ~/.ssh/id_ed25519.pub
+```
 
 # Installation
 
