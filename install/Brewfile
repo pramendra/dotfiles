@@ -40,11 +40,8 @@ mas "Slack", id: 803453959
 mas "amazon-prime-video", id: 545519333
 mas "bear-markdown-notes", id: 1091189122
 mas "day-one", id: 1055511498
-mas "evernote-notes-organizer", id: 281796108
-mas "garageband", id: 408709785
-mas "google-docs-sync-edit-share", id: 842842640
-mas "google-sheets", id: 842849113
-mas "google-slides", id: 879478102
-mas "imovie", id: 377298193
-mas "line", id: 443904275
-mas "telegram-messenger", id: 686449807
+mas "evernote", id: 406056744
+mas "garageband", id: 682658836
+mas "imovie", id: 408981434
+mas "line", id: 539883307
+mas "telegram", id: 747648890
