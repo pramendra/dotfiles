@@ -388,3 +388,6 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "iCal"; do
   killall "${app}" &> /dev/null
 done
+
+# To disable sound effects, run the following command in a Terminal window:
+defaults write "Apple Global Domain" com.apple.sound.uiaudio.enabled -int 0
