@@ -19,7 +19,7 @@ macos: sudo core-macos packages link
 
 linux: core-linux link
 
-core-macos: brew git npm ruby
+core-macos: brew bash git npm ruby
 
 core-linux:
 	apt-get update

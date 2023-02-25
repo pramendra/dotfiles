@@ -52,6 +52,8 @@ Cloned to `~/.dotfiles`
 ```bash
 $ cd ~/.dotfiles
 $ make
+$ ./bin/dotfiles dock
+$ ./bin/dotfiles macos
 ```
 
 # Features

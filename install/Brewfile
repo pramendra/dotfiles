@@ -1,28 +1,58 @@
 tap "goles/battery"
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "lotyp/homebrew-formulae"
+
+# core/dotfiles
+brew "bats-core"
+brew "coreutils"
+brew "lotyp/formulae/dockutil"
+brew "mackup"
+brew "nano"
+brew "stow"
+brew "topgrade"
+
+# fs/network
+brew "bat"
+brew "croc"
+brew "httpie"
+brew "ssh-copy-id"
+brew "tree"
+brew "unar"
+brew "wget"
+brew "zoxide"
+
+# search/grep/diff
+brew "diff-so-fancy"
+brew "difftastic"
+brew "fd"
+brew "fzf"
+brew "gnu-sed"
+brew "grep"
+brew "jq"
+brew "psgrep"
+brew "the_silver_searcher"
+
+# languages/tools
+brew "fnm"
+brew "gh"
+brew "python"
+brew "rust"
+brew "shellcheck"
+
+# media
+brew "ffmpeg"
+brew "imagemagick"
+brew "webp"
+
+# misc
+brew "grip"
 
 brew "fasd"
-brew "ffmpeg"
-brew "gh"
-brew "gnu-sed"
 brew "gnupg"
 brew "goles/battery/battery"
-brew "grep"
-brew "grip"
-brew "httpie"
 brew "http-server"
-brew "imagemagick"
-brew "jq"
-brew "mackup"
-brew "psgrep"
-brew "python"
-brew "shellcheck"
 brew "spaceship"
-brew "stow"
-brew "thefuck"
-brew "tree"
-brew "wget"
 
 mas 'Feedly', id: 865500966
 mas 'Keynote', id: 409183694
