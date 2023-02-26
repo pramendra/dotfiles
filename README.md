@@ -15,6 +15,12 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 ### [Adding a new SSH key to your account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account)
 
 ```bash
+$ gh auth login
+```
+
+Copy ssh public key
+
+```bash
 $ pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
@@ -97,3 +103,13 @@ Many thanks to the [dotfiles community](https://dotfiles.github.io).
 
 $ rm -rf ~/.nvm
 $ make npm
+
+### Fix
+
+#### "login: /usr/local/bin/bash: No such file or directory [Process completed]"
+
+1. system Settings.app
+2. control + click on user icon
+3. Choose Advanced options
+4. enter password
+5. Change longin shell to '/bin/bash'
