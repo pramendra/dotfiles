@@ -19,7 +19,7 @@ macos: sudo core-macos packages link
 
 linux: core-linux link
 
-core-macos: brew bash git npm ruby
+core-macos: brew bash git npm ruby rust
 
 core-linux:
 	apt-get update
@@ -38,7 +38,7 @@ ifndef GITHUB_ACTION
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 endif
 
-packages: brew-packages cask-apps node-packages
+packages: brew-packages cask-apps node-packages rust-packages
 
 link: stow-$(OS)
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then \
@@ -93,6 +93,9 @@ ruby: brew
 	# is-executable rvm || gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys | bash
 	# is-executable rvm || curl -sSL https://get.rvm.io | bash -s stable --rails
 
+rust: brew
+	brew install rust
+
 # packages
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
@@ -103,6 +106,9 @@ cask-apps: brew
 
 node-packages: npm
 	. $(NVM_DIR)/nvm.sh; npm install -g $(shell cat install/npmfile)
+
+rust-packages: rust
+	$(CARGO_BIN) install $(shell cat install/Rustfile)
 
 test:
 	eval $$(fnm env); bats test

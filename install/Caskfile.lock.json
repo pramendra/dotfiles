@@ -5,13 +5,13 @@
         "revision": "ae2074d43a513324f5f00b360dddf04dc0083da9"
       },
       "homebrew/cask-drivers": {
-        "revision": "f7457ce5e20f5ce8bd7cab6a14039f20cbd907fa"
+        "revision": "6763d07624f157ed1c62270796adb12ed888f7cb"
       },
       "homebrew/cask-fonts": {
-        "revision": "7948341f1e9493f4f026081ccef1cb7a224d9e0d"
+        "revision": "c6dc2ce1357bc4cbe435ac1fbf67375707260ab0"
       },
       "homebrew/cask-versions": {
-        "revision": "00dfaf846eee2c8012cc0dda52d04e8af5a2a46d"
+        "revision": "2c0aaf67083674cd2b5a5716dfb2788a7993cd1c"
       },
       "adoptopenjdk/openjdk": {
         "revision": "27915e4ab3856595a8b46d1fd3b6c379c1f02210"
