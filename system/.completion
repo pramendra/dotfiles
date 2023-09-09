@@ -1,10 +1,10 @@
 # ZSH
-# if is-executable brew; then
-#   BREW_PREFIX=$(brew --prefix)
-#   ZSH_COMPLETION="$BREW_PREFIX/share/zsh-completion/ZSH_completion"
-#   . "$ZSH_COMPLETION"
-#   unset BREW_PREFIX ZSH_COMPLETION
-# fi
+if is-executable brew; then
+  BREW_PREFIX=$(brew --prefix)
+  ZSH_COMPLETION="$BREW_PREFIX/share/zsh-completion/ZSH_completion"
+  . "$ZSH_COMPLETION"
+  unset BREW_PREFIX ZSH_COMPLETION
+fi
 
 # Dotfiles
 _dotfiles_completions() {
@@ -12,7 +12,7 @@ _dotfiles_completions() {
   COMPREPLY=( $(compgen -W 'clean dock edit help macos test update' -- $cur ) );
 }
 
-# complete -o default -F _dotfiles_completions dotfiles
+complete -o default -F _dotfiles_completions dotfiles
 
 # nvm
 
