@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your dotfiles.
 export DOTFILES=$HOME/.dotfiles
@@ -15,26 +15,26 @@ export DOTFILES=$HOME/.dotfiles
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
+# ZSH_THEME="spaceship"
 
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stampts section
-  user          # Username section
-  host          # Hostname section
-  dir           # Current directory section
-  git           # Git section (git_branch + git_status)
-  node          # Node.js section
-  ruby          # Ruby section
-  xcode         # Xcode section
-  swift         # Swift section
-  golang        # Go section
-  docker        # Docker section
-  venv          # virtualenv sectionvi_mode
-  # pyenv         # Pyenv section
-  line_sep      # Line break
-  # vi_mode       # Vi-mode indicator
-  char          # Prompt character
-)
+# SPACESHIP_PROMPT_ORDER=(
+#   time          # Time stampts section
+#   user          # Username section
+#   host          # Hostname section
+#   dir           # Current directory section
+#   git           # Git section (git_branch + git_status)
+#   node          # Node.js section
+#   ruby          # Ruby section
+#   xcode         # Xcode section
+#   swift         # Swift section
+#   golang        # Go section
+#   docker        # Docker section
+#   venv          # virtualenv sectionvi_mode
+#   # pyenv         # Pyenv section
+#   line_sep      # Line break
+#   # vi_mode       # Vi-mode indicator
+#   char          # Prompt character
+# )
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,22 +97,23 @@ SPACESHIP_PROMPT_ORDER=(
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   bundler
-  dotenv
-  osx
-  rake
-  rbenv
-  ruby
-  jsontools
-  node
-  pip
-  web-search
-  zsh-autosuggestions
   colored-man-pages
   colorize
   common-aliases
   copyfile
+  dotenv
+  git
+  jsontools
+  node
+  osx
+  pip
+  rake
+  rbenv
+  ruby
+  web-search
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 # User configuration
@@ -145,7 +146,6 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 # source "$(brew --prefix)/opt/spaceship/spaceship.zsh"
 
-# fpath=($fpath "/Users/pramendra/.zfunctions")
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 # Set Spaceship ZSH as a prompt
@@ -162,6 +162,4 @@ alias python=python3
 alias pip=pip3
 
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
-
-# export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
