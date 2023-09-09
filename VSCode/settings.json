@@ -69,5 +69,6 @@
   "window.zoomLevel": -1,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.editor.untitled.hint": "hidden"
 }
