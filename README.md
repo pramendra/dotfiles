@@ -1,8 +1,29 @@
-# .dotfiles
+# Pramendra's .dotfiles
 
-These are my dotfiles. Take anything you want, but at your own risk.
+```
+Note: These are my dotfiles. Take anything you want, but at your own risk.
+This repository mainly targets macOS systems.
+```
 
-It mainly targets macOS systems
+## Setup new device
+```bash
+$ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ make
+$ ./bin/dotfiles dock
+$ ./bin/dotfiles macos
+```
+## Hot fix
+```bash
+$ cd ~/.dotfiles
+$ git pull
+$ make
+```
+
+---
+
+
+
 
 ## Pre Installation
 
@@ -24,10 +45,6 @@ Copy ssh public key
 $ pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-# Installation
-
-## Preinstall
-
 ### On a sparkling fresh installation of macOS:
 
 ```bash
@@ -35,38 +52,8 @@ sudo softwareupdate -i -a
 xcode-select --install
 ```
 
-The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS). Now there are two options:
+Note: The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS). Now there are two options:
 
-## Clone the repository
-
-```bash
-git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
-```
-
-### alternative using curl
-
-#### Clone dotfiles
-
-```bash
-bash -c "`curl -fsSL https://raw.githubusercontent.com/pramendra/dotfiles/master/remote-install.sh`"
-```
-
-Cloned to `~/.dotfiles`
-
-## Install via make
-
-```bash
-$ cd ~/.dotfiles
-$ make
-$ ./bin/dotfiles dock
-$ ./bin/dotfiles macos
-```
-
-# Features
-
-```
-brew, npm, oh-my-zsh
-```
 
 ## Post-Installation
 
@@ -93,21 +80,21 @@ Commands:
     update           Update packages and pkg managers (OS, brew, npm, gem)
 ```
 
-## Credits
+# Features
+```
+brew, npm, oh-my-zsh
+```
 
+## Credits
 Many thanks to the [dotfiles community](https://dotfiles.github.io).
 
-# Doctor
+## D0ctor
 
-## nvm not found
-
+### nvm not found
 $ rm -rf ~/.nvm
 $ make npm
 
-### Fix
-
-#### "login: /usr/local/bin/bash: No such file or directory [Process completed]"
-
+### "login: /usr/local/bin/bash: No such file or directory [Process completed]"
 1. system Settings.app
 2. control + click on user icon
 3. Choose Advanced options

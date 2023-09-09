@@ -15,7 +15,7 @@ export DOTFILES=$HOME/.dotfiles
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME=""
 
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stampts section
@@ -143,12 +143,14 @@ plugins=(
 
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-source "$(brew --prefix)/opt/spaceship/spaceship.zsh"
+# source "$(brew --prefix)/opt/spaceship/spaceship.zsh"
+
+# fpath=($fpath "/Users/pramendra/.zfunctions")
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 # Set Spaceship ZSH as a prompt
-# autoload -U promptinit; promptinit
-# prompt spaceship
-fpath=($fpath "/Users/pramendra/.zfunctions")
+autoload -U promptinit; promptinit
+prompt pure
 
 if [ -f $HOME/.bash_profile ]; then 
   source $HOME/.bash_profile;
@@ -161,4 +163,5 @@ alias pip=pip3
 
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
 
-export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin
+# export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
