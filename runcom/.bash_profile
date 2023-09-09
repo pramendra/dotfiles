@@ -34,8 +34,7 @@ if is-macos; then
 fi
 
 # Set LSCOLORS
-# TODO brew coreutils
-# eval "$(dircolors -b "$DOTFILES_DIR"/system/.dir_colors)"
+eval "$(dircolors -b "$DOTFILES_DIR"/system/.dir_colors)"
 
 # Hook for extra/custom stuff
 
