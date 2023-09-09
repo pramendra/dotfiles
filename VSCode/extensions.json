@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "amazonwebservices.aws-toolkit-vscode",
     "bradlc.vscode-tailwindcss",
     "csstools.postcss",
     "dbaeumer.vscode-eslint",
