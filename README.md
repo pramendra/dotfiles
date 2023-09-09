@@ -4,14 +4,16 @@
 Note: These are my dotfiles. Take anything you want, but at your own risk.
 This repository mainly targets macOS systems.
 ```
-
 ## Setup new device
 ```bash
 $ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
 $ make
-$ ./bin/dotfiles dock
-$ ./bin/dotfiles macos
+```
+
+```bash
+$ dotfiles dock #./bin/dotfiles dock
+$ dotfiles macos
 ```
 ## Hot fix
 ```bash
@@ -19,7 +21,10 @@ $ cd ~/.dotfiles
 $ git pull
 $ make
 ```
-
+### npm ERR! code ENOTEMPTY
+```$
+$ rm -rf /opt/homebrew/lib/node_modules/npm
+```
 ---
 
 
