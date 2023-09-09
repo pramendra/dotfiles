@@ -163,3 +163,5 @@ alias pip=pip3
 
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export AWS_PROFILE=saml
+export ONELOGIN_MFA_IP_ADDRESS=$(curl -SsL http://checkip.amazonaws.com/)

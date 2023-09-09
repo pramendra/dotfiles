@@ -4,12 +4,14 @@ tap "homebrew/core"
 tap "lotyp/homebrew-formulae"
 
 # core/dotfiles
+brew "awscli"
 brew "bats-core"
 brew "coreutils"
 brew "lotyp/formulae/dockutil"
-brew "mas"
 brew "mackup"
+brew "mas"
 brew "nano"
+brew "saml2aws"
 brew "stow"
 brew "topgrade"
 

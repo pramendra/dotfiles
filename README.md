@@ -4,7 +4,15 @@
 Note: These are my dotfiles. Take anything you want, but at your own risk.
 This repository mainly targets macOS systems.
 ```
+
 ## Setup new device
+
+#### Copy the item configuraiton
+
+```bash
+$ cp config/iterm/* ~/Library/Preferences/
+```
+
 ```bash
 $ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
 $ cd ~/.dotfiles
@@ -15,20 +23,30 @@ $ make
 $ dotfiles dock #./bin/dotfiles dock
 $ dotfiles macos
 ```
+
 ## Hot fix
+
+### fix symbolic link
+
+```bash
+make unlink && make link
+```
+
+### Update lastest change
+
 ```bash
 $ cd ~/.dotfiles
 $ git pull
 $ make
 ```
+
 ### npm ERR! code ENOTEMPTY
+
 ```$
 $ rm -rf /opt/homebrew/lib/node_modules/npm
 ```
+
 ---
-
-
-
 
 ## Pre Installation
 
@@ -59,7 +77,6 @@ xcode-select --install
 
 Note: The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS). Now there are two options:
 
-
 ## Post-Installation
 
 - `dotfiles dock` (set [Dock items](./macos/dock.sh))
@@ -86,20 +103,24 @@ Commands:
 ```
 
 # Features
+
 ```
 brew, npm, oh-my-zsh
 ```
 
 ## Credits
+
 Many thanks to the [dotfiles community](https://dotfiles.github.io).
 
 ## D0ctor
 
 ### nvm not found
+
 $ rm -rf ~/.nvm
 $ make npm
 
 ### "login: /usr/local/bin/bash: No such file or directory [Process completed]"
+
 1. system Settings.app
 2. control + click on user icon
 3. Choose Advanced options

@@ -8,6 +8,7 @@
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
+
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
@@ -1362,7 +1363,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/pramendra</string>
+			<string>~/</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2000,7 +2001,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/pramendra</string>
+			<string>~/</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2638,7 +2639,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/pramendra</string>
+			<string>~/</string>
 		</dict>
 	</array>
 	<key>NoSyncAllAppVersions</key>
@@ -3392,7 +3393,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/pramendra/.dotfiles/config/iterm</string>
+	<string>~/.dotfiles/config/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
