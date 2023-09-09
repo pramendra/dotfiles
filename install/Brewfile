@@ -52,6 +52,7 @@ brew "grip"
 brew "gnupg"
 brew "goles/battery/battery"
 brew "http-server"
+brew "spaceship"
 brew "pure"
 
 mas 'Feedly', id: 865500966
@@ -71,4 +72,3 @@ mas "garageband", id: 682658836
 mas "imovie", id: 408981434
 mas "LINE", id: 539883307
 mas "magnet", id: 441258766
-mas "Slack", id: 803453959
