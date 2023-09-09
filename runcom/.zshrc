@@ -160,3 +160,5 @@ alias python=python3
 alias pip=pip3
 
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
+
+export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin

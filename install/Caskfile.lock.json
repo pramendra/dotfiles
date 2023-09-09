@@ -5,13 +5,13 @@
         "revision": "ae2074d43a513324f5f00b360dddf04dc0083da9"
       },
       "homebrew/cask-drivers": {
-        "revision": "6763d07624f157ed1c62270796adb12ed888f7cb"
+        "revision": "087f2574a86f1d1f0e68a0fcefabf64f04678547"
       },
       "homebrew/cask-fonts": {
-        "revision": "c6dc2ce1357bc4cbe435ac1fbf67375707260ab0"
+        "revision": "1f2a2a60270068331dfae36f9a5e3bdd26805929"
       },
       "homebrew/cask-versions": {
-        "revision": "2c0aaf67083674cd2b5a5716dfb2788a7993cd1c"
+        "revision": "26dc6acf72e178e4bad205a37f7be0643d1fd712"
       },
       "adoptopenjdk/openjdk": {
         "revision": "27915e4ab3856595a8b46d1fd3b6c379c1f02210"
@@ -31,7 +31,7 @@
         }
       },
       "firefox": {
-        "version": "110.0",
+        "version": "110.0.1",
         "options": {
           "full_name": "firefox"
         }
@@ -61,7 +61,7 @@
         }
       },
       "google-chrome": {
-        "version": "110.0.5481.177",
+        "version": "111.0.5563.64",
         "options": {
           "full_name": "google-chrome"
         }
@@ -97,7 +97,7 @@
         }
       },
       "postman": {
-        "version": "10.10.9",
+        "version": "10.11.1",
         "options": {
           "full_name": "postman"
         }
@@ -109,13 +109,13 @@
         }
       },
       "sourcetree": {
-        "version": "4.2.1,248",
+        "version": "4.2.2,250",
         "options": {
           "full_name": "sourcetree"
         }
       },
       "spotify": {
-        "version": "1.2.5.1006,22820f93,1069",
+        "version": "1.2.6.863,e7902f05,167",
         "options": {
           "full_name": "spotify"
         }
@@ -127,7 +127,7 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.75.1",
+        "version": "1.76.0",
         "options": {
           "full_name": "visual-studio-code"
         }
@@ -145,19 +145,19 @@
         }
       },
       "docker": {
-        "version": "4.16.2,95914",
+        "version": "4.17.0,99724",
         "options": {
           "full_name": "docker"
         }
       },
       "figma": {
-        "version": "116.6.3",
+        "version": "116.7.6",
         "options": {
           "full_name": "figma"
         }
       },
       "1password": {
-        "version": "8.10.0",
+        "version": "8.10.1",
         "options": {
           "full_name": "1password"
         }
@@ -169,13 +169,13 @@
         }
       },
       "github": {
-        "version": "3.1.8-2ada979c",
+        "version": "3.2.0-3a1561b0",
         "options": {
           "full_name": "github"
         }
       },
       "flux": {
-        "version": "41.4",
+        "version": "42.1",
         "options": {
           "full_name": "flux"
         }
@@ -241,7 +241,7 @@
         }
       },
       "google-drive": {
-        "version": "71.0.3",
+        "version": "72.0.1",
         "options": {
           "full_name": "google-drive"
         }
@@ -253,7 +253,7 @@
         }
       },
       "notion": {
-        "version": "2.1.12",
+        "version": "2.1.13",
         "options": {
           "full_name": "notion"
         }
@@ -301,7 +301,7 @@
         }
       },
       "grammarly-desktop": {
-        "version": "1.20.0.3",
+        "version": "1.21.0.1",
         "options": {
           "full_name": "grammarly-desktop"
         }
@@ -313,7 +313,7 @@
         }
       },
       "lastpass": {
-        "version": "4.110.0",
+        "version": "4.110.1",
         "options": {
           "full_name": "lastpass"
         }
@@ -331,7 +331,7 @@
         }
       },
       "microsoft-edge": {
-        "version": "110.0.1587.50",
+        "version": "110.0.1587.63",
         "options": {
           "full_name": "microsoft-edge"
         }
@@ -349,7 +349,7 @@
         }
       },
       "signal": {
-        "version": "6.7.0",
+        "version": "6.8.0",
         "options": {
           "full_name": "signal"
         }
@@ -373,7 +373,7 @@
         }
       },
       "viber": {
-        "version": "19.4.0,1940",
+        "version": "19.5.0,1950",
         "options": {
           "full_name": "viber"
         }
@@ -385,13 +385,13 @@
         }
       },
       "whatsapp": {
-        "version": "2.2307.10",
+        "version": "2.2310.5",
         "options": {
           "full_name": "whatsapp"
         }
       },
       "zoom": {
-        "version": "5.13.7.15481",
+        "version": "5.13.11.16405",
         "options": {
           "full_name": "zoom"
         }
@@ -400,6 +400,12 @@
         "version": "0.0.273",
         "options": {
           "full_name": "discord"
+        }
+      },
+      "bitwarden": {
+        "version": "2023.2.0",
+        "options": {
+          "full_name": "bitwarden"
         }
       }
     }
@@ -423,7 +429,7 @@
         "macOS": "12.5.1"
       },
       "ventura": {
-        "HOMEBREW_VERSION": "4.0.3",
+        "HOMEBREW_VERSION": "4.0.5",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "14.2.0.0.1.1668646533",
