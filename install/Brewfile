@@ -2,6 +2,7 @@ tap "goles/battery"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "lotyp/homebrew-formulae"
+tap "oven-sh/bun"
 
 # core/dotfiles
 brew "awscli"
@@ -54,8 +55,10 @@ brew "grip"
 brew "gnupg"
 brew "goles/battery/battery"
 brew "http-server"
-brew "spaceship"
+# brew "spaceship"
 brew "pure"
+brew "bun"
+
 
 mas 'Feedly', id: 865500966
 mas 'Keynote', id: 409183694
