@@ -18,11 +18,10 @@ else
 fi
 
 # Make utilities available
-
 PATH="$DOTFILES_DIR/bin:$PATH"
+  [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Source the dotfiles (order matters)
-
 for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,grep,prompt,nvm,completion,fix,custom}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
@@ -51,16 +50,29 @@ fi
 unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
 
 # Export
-
 export DOTFILES_DIR DOTFILES_EXTRA_DIR
 
-# source $HOME/.nvm/nvm.sh
+# Brew
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+
+
+# nvm
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
+export NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
+
+# Java
 export PATH=/opt/homebrew/opt/openjdk@11/bin:$PATH
 
+# Python
+export PATH=$HOME/Library/Python/3.9/bin:$PATH
 alias python=python3
 alias pip=pip3
 
-export PATH=$HOME/Library/Python/3.9/bin:$PATH
-# export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+#GCP
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# setting
 export AWS_PROFILE=saml
 export ONELOGIN_MFA_IP_ADDRESS=$(curl -SsL http://checkip.amazonaws.com/)
