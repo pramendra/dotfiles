@@ -1,0 +1,356 @@
+{
+  "entries": {
+    "tap": {
+      "homebrew/cask-fonts": {
+        "revision": "81bf750832ccb8bb6eda9372b6250603d1932b23"
+      },
+      "homebrew/cask": {
+        "revision": "727c4e926a6f62829639e67f577594d6bd045369"
+      }
+    },
+    "cask": {
+      "1password": {
+        "version": "8.10.16",
+        "options": {
+          "full_name": "1password"
+        }
+      },
+      "alfred": {
+        "version": "5.1.3,2175",
+        "options": {
+          "full_name": "alfred"
+        }
+      },
+      "android-file-transfer": {
+        "version": "5071136",
+        "options": {
+          "full_name": "android-file-transfer"
+        }
+      },
+      "anki": {
+        "version": "2.1.66",
+        "options": {
+          "full_name": "anki"
+        }
+      },
+      "appcleaner": {
+        "version": "3.6.8",
+        "options": {
+          "full_name": "appcleaner"
+        }
+      },
+      "apple-juice": {
+        "version": "2020.12.0",
+        "options": {
+          "full_name": "apple-juice"
+        }
+      },
+      "bitwarden": {
+        "version": "2023.9.1",
+        "options": {
+          "full_name": "bitwarden"
+        }
+      },
+      "brave-browser": {
+        "version": "1.58.137.0",
+        "options": {
+          "full_name": "brave-browser"
+        }
+      },
+      "dash": {
+        "version": "7.1.2",
+        "options": {
+          "full_name": "dash"
+        }
+      },
+      "deepl": {
+        "version": "23.9.1591123",
+        "options": {
+          "full_name": "deepl"
+        }
+      },
+      "discord": {
+        "version": "0.0.280",
+        "options": {
+          "full_name": "discord"
+        }
+      },
+      "docker": {
+        "version": "4.24.0,122432",
+        "options": {
+          "full_name": "docker"
+        }
+      },
+      "dropbox": {
+        "version": "184.4.6543",
+        "options": {
+          "full_name": "dropbox"
+        }
+      },
+      "figma": {
+        "version": "116.13.3",
+        "options": {
+          "full_name": "figma"
+        }
+      },
+      "firefox": {
+        "version": "118.0.1",
+        "options": {
+          "full_name": "firefox"
+        }
+      },
+      "flux": {
+        "version": "42.2",
+        "options": {
+          "full_name": "flux"
+        }
+      },
+      "font-fira-code": {
+        "version": "6.2",
+        "options": {
+          "full_name": "font-fira-code"
+        }
+      },
+      "font-hack": {
+        "version": "3.003",
+        "options": {
+          "full_name": "font-hack"
+        }
+      },
+      "forklift": {
+        "version": "4.0.2",
+        "options": {
+          "full_name": "forklift"
+        }
+      },
+      "github": {
+        "version": "3.3.3-abf8a692",
+        "options": {
+          "full_name": "github"
+        }
+      },
+      "google-chrome": {
+        "version": "117.0.5938.149",
+        "options": {
+          "full_name": "google-chrome"
+        }
+      },
+      "google-cloud-sdk": {
+        "version": "449.0.0",
+        "options": {
+          "full_name": "google-cloud-sdk"
+        }
+      },
+      "google-drive": {
+        "version": "82.0.1",
+        "options": {
+          "full_name": "google-drive"
+        }
+      },
+      "grammarly-desktop": {
+        "version": "1.38.3.1",
+        "options": {
+          "full_name": "grammarly-desktop"
+        }
+      },
+      "hiddenbar": {
+        "version": "1.9",
+        "options": {
+          "full_name": "hiddenbar"
+        }
+      },
+      "hyper": {
+        "version": "3.4.1",
+        "options": {
+          "full_name": "hyper"
+        }
+      },
+      "intellij-idea": {
+        "version": "2023.2.2,232.9921.47",
+        "options": {
+          "full_name": "intellij-idea"
+        }
+      },
+      "iterm2": {
+        "version": "3.4.21",
+        "options": {
+          "full_name": "iterm2"
+        }
+      },
+      "kindle": {
+        "version": "1.40.65626",
+        "options": {
+          "full_name": "kindle"
+        }
+      },
+      "lastpass": {
+        "version": "4.116.0",
+        "options": {
+          "full_name": "lastpass"
+        }
+      },
+      "lunar-client": {
+        "version": "3.1.0",
+        "options": {
+          "full_name": "lunar-client"
+        }
+      },
+      "mem": {
+        "version": "0.43.0",
+        "options": {
+          "full_name": "mem"
+        }
+      },
+      "microsoft-edge": {
+        "version": "117.0.2045.55,6293106b-13bc-4423-b6d9-cc405dd5f5f9",
+        "options": {
+          "full_name": "microsoft-edge"
+        }
+      },
+      "minecraft": {
+        "version": "1.1.26",
+        "options": {
+          "full_name": "minecraft"
+        }
+      },
+      "notion": {
+        "version": "2.2.1",
+        "options": {
+          "full_name": "notion"
+        }
+      },
+      "omnifocus": {
+        "version": "3.15",
+        "options": {
+          "full_name": "omnifocus"
+        }
+      },
+      "phpstorm": {
+        "version": "2023.2.2,232.9921.55",
+        "options": {
+          "full_name": "phpstorm"
+        }
+      },
+      "postman": {
+        "version": "10.18.10",
+        "options": {
+          "full_name": "postman"
+        }
+      },
+      "sequel-pro": {
+        "version": "1.1.2",
+        "options": {
+          "full_name": "sequel-pro"
+        }
+      },
+      "signal": {
+        "version": "6.33.0",
+        "options": {
+          "full_name": "signal"
+        }
+      },
+      "skitch": {
+        "version": "2.9",
+        "options": {
+          "full_name": "skitch"
+        }
+      },
+      "skype": {
+        "version": "8.105.0.211",
+        "options": {
+          "full_name": "skype"
+        }
+      },
+      "sourcetree": {
+        "version": "4.2.5,259",
+        "options": {
+          "full_name": "sourcetree"
+        }
+      },
+      "spectacle": {
+        "version": "1.2,672",
+        "options": {
+          "full_name": "spectacle"
+        }
+      },
+      "spotify": {
+        "version": "1.2.21.1104,42cf0a50,307",
+        "options": {
+          "full_name": "spotify"
+        }
+      },
+      "sublime-text": {
+        "version": "4152",
+        "options": {
+          "full_name": "sublime-text"
+        }
+      },
+      "tableplus": {
+        "version": "5.4.2,506",
+        "options": {
+          "full_name": "tableplus"
+        }
+      },
+      "the-unarchiver": {
+        "version": "4.3.5,139,1652457131",
+        "options": {
+          "full_name": "the-unarchiver"
+        }
+      },
+      "transmission": {
+        "version": "4.0.4",
+        "options": {
+          "full_name": "transmission"
+        }
+      },
+      "viber": {
+        "version": "21.1.0,2110",
+        "options": {
+          "full_name": "viber"
+        }
+      },
+      "visual-studio-code": {
+        "version": "1.83.0",
+        "options": {
+          "full_name": "visual-studio-code"
+        }
+      },
+      "vlc": {
+        "version": "3.0.18",
+        "options": {
+          "full_name": "vlc"
+        }
+      },
+      "wechat": {
+        "version": "3.8.4.19",
+        "options": {
+          "full_name": "wechat"
+        }
+      },
+      "whatsapp": {
+        "version": "2.23.19.86",
+        "options": {
+          "full_name": "whatsapp"
+        }
+      },
+      "zoom": {
+        "version": "5.16.2.23409",
+        "options": {
+          "full_name": "zoom"
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.1.14-49-g7a2425f",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.0.0.0.1.1694021235",
+        "Xcode": "15.0",
+        "macOS": "14.0"
+      }
+    }
+  }
+}

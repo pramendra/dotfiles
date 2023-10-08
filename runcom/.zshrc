@@ -156,12 +156,13 @@ if [ -f $HOME/.bash_profile ]; then
   source $HOME/.bash_profile;
 fi
 
-source $HOME/.nvm/nvm.sh
+# source $HOME/.nvm/nvm.sh
+export PATH=/opt/homebrew/opt/openjdk@11/bin:$PATH
 
 alias python=python3
 alias pip=pip3
 
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+# export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export AWS_PROFILE=saml
 export ONELOGIN_MFA_IP_ADDRESS=$(curl -SsL http://checkip.amazonaws.com/)

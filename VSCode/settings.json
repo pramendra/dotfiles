@@ -69,5 +69,12 @@
   "window.zoomLevel": -1,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "terminal.integrated.defaultProfile.osx": "Homebrew Bash",
+  "terminal.integrated.profiles.osx": {
+    "Homebrew Bash": {
+      "path": "/opt/homebrew/bin/bash"
+    }
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }

@@ -5,8 +5,10 @@ tap "lotyp/homebrew-formulae"
 tap "oven-sh/bun"
 
 # core/dotfiles
+brew "asdf"
 brew "awscli"
 brew "bats-core"
+brew "openjdk@11"
 brew "coreutils"
 brew "lotyp/formulae/dockutil"
 brew "mackup"

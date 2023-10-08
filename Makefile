@@ -38,7 +38,7 @@ ifndef GITHUB_ACTION
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 endif
 
-packages: brew-packages cask-apps node-packages rust-packages
+packages: brew-packages cask-apps node-packages
 
 link: stow-$(OS)
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then \
@@ -63,6 +63,9 @@ unlink: stow-$(OS)
 # core
 brew:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash	
+	brew cleanup
+	brew update
+	brew upgrade
 bash: BASH=$(HOMEBREW_PREFIX)/bin/bash
 bash: SHELLS=/private/etc/shells
 bash: brew
@@ -96,19 +99,15 @@ ruby: brew
 rust: brew
 	brew install rust
 
-# packages
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
 cask-apps: brew
-	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
+	brew bundle --file="${DOTFILES_DIR}/install/Caskfile" --no-upgrade 2>/dev/null
 	defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
 
 node-packages: npm
 	. $(NVM_DIR)/nvm.sh; npm install -g $(shell cat install/npmfile)
-
-rust-packages: rust
-	$(CARGO_BIN) install $(shell cat install/Rustfile)
 
 test:
 	eval $$(fnm env); bats test

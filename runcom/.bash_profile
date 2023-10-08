@@ -53,3 +53,14 @@ unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
 # Export
 
 export DOTFILES_DIR DOTFILES_EXTRA_DIR
+
+# source $HOME/.nvm/nvm.sh
+export PATH=/opt/homebrew/opt/openjdk@11/bin:$PATH
+
+alias python=python3
+alias pip=pip3
+
+export PATH=$HOME/Library/Python/3.9/bin:$PATH
+# export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export AWS_PROFILE=saml
+export ONELOGIN_MFA_IP_ADDRESS=$(curl -SsL http://checkip.amazonaws.com/)

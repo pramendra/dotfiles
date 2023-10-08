@@ -121,8 +121,10 @@ $ make npm
 
 ### "login: /usr/local/bin/bash: No such file or directory [Process completed]"
 
-1. system Settings.app
-2. control + click on user icon
-3. Choose Advanced options
-4. enter password
-5. Change longin shell to '/bin/bash'
+in Sonoma:
+
+Open Terminal.
+Choose Terminal > Settings, then click General.
+Next to “Shells open with,” select “Command (complete path),” then enter the complete path to the shell you want to use1.
+
+chsh -s /bin/zsh
