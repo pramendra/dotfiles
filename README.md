@@ -7,3 +7,4 @@ Idempotent macOS bootstrap.
 chmod +x macos/defaults.sh
 chmod +x macos/dock.sh
 chmod +x scripts/vscode.sh
+chmod +x scripts/lang.sh
