@@ -1,8 +1,55 @@
+# Taps
 tap "homebrew/bundle"
+
+# Core developer tooling
 brew "git"
+brew "gh"
 brew "gnu-stow"
+brew "jq"
+brew "nvm"                  # Node Version Manager
+
+# Terminal utilities and UX
 brew "fzf"
 brew "ripgrep"
 brew "eza"
 brew "bat"
+brew "tree"
+
+# Networking and HTTP
+brew "http-server"
+brew "ssh-copy-id"
+
+# Documentation / Markdown preview
+brew "grip"
+
+# Casks – Browsers
+cask "google-chrome"        # Chrome
+cask "microsoft-edge"       # Edge
+cask "arc"                  # Arc Browser
+
+# Casks – Editors & Dev tools
+cask "visual-studio-code"   # VS Code
 cask "iterm2"
+
+# Casks – Productivity & Utilities
+cask "notion"
+cask "deepl"
+cask "1password"
+cask "whatsapp"
+cask "slack"
+
+# Mac App Store – Productivity & notes
+mas "Grammarly: AI Writing and Grammar", id: 1462114288
+mas "Bear – Markdown Notes", id: 1091189122
+mas "Evernote – Notes Organizer", id: 406056744
+mas "Todoist: To-Do List & Planner", id: 585829637
+mas "Trello: organize anything!", id: 1278508951
+mas "Feedly - Smart News Reader", id: 865500966
+
+# Mac App Store – Apple iWork suite
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+
+# Mac App Store – Development
+mas "Xcode", id: 497799835
