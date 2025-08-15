@@ -23,7 +23,7 @@ brew "ssh-copy-id"
 brew "grip"
 
 # Casks – Browsers
-cask "google-chrome"        # Chrome
+cask "google-chrome", greedy: true
 cask "microsoft-edge"       # Edge
 cask "arc"                  # Arc Browser
 
