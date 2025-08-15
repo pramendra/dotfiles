@@ -1,0 +1,11 @@
+[user]
+	name = Pramendra Gupta
+	email = pramendra@gmail.com
+[github]
+	user = pramendra
+[core]
+  editor = code --wait
+[pull]
+  rebase = false
+[init]
+  defaultBranch = main

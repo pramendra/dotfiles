@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cmd="${1:-help}"
+case "$cmd" in
+  link)   stow -v -t "$HOME" zsh git ;;
+  unlink) stow -Dv -t "$HOME" zsh git ;;
+  help|*) echo "Usage: dots {link|unlink}";;
+esac
