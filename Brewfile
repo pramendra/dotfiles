@@ -1,6 +1,3 @@
-# Taps
-tap "homebrew/bundle"
-
 # Core developer tooling
 brew "git"
 brew "gh"
