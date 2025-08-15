@@ -11,6 +11,8 @@ command -v starship >/dev/null && eval "$(starship init zsh)"
 # fzf keybindings
 /opt/homebrew/opt/fzf/install --key-bindings --completion --no-bash --no-fish >/dev/null 2>&1 || true
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # --- NVM (Homebrew) ---
 # Keep nvm data out of repo; Homebrew installs nvm code separately.
 export NVM_DIR="$HOME/.nvm"
