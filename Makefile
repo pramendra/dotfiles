@@ -8,4 +8,5 @@ update:    ; brew update && brew upgrade && brew cleanup
 
 macos:     ; ./macos/defaults.sh
 dock:      ; ./macos/dock.sh
-npm:      ; ./scripts/npm_globals.sh
+npm:			 ; ./scripts/npm_globals.sh
+ssh:			 ; ./scripts/ssh-setup.sh
