@@ -4,7 +4,7 @@ tap "homebrew/bundle"
 # Core developer tooling
 brew "git"
 brew "gh"
-brew "gnu-stow"
+brew "stow"
 brew "jq"
 brew "nvm"                  # Node Version Manager
 
