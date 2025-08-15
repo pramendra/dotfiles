@@ -44,7 +44,6 @@ mas "Bear – Markdown Notes", id: 1091189122
 mas "Evernote – Notes Organizer", id: 406056744
 mas "Todoist: To-Do List & Planner", id: 585829637
 mas "Trello: organize anything!", id: 1278508951
-mas "Feedly - Smart News Reader", id: 865500966
 
 # Mac App Store – Apple iWork suite
 mas "Keynote", id: 409183694
