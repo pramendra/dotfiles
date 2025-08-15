@@ -10,3 +10,4 @@ macos:     ; ./macos/defaults.sh
 dock:      ; ./macos/dock.sh
 npm:			 ; ./scripts/npm_globals.sh
 ssh:			 ; ./scripts/ssh-setup.sh
+all: 			 ; bootstrap link update macos dock npm ssh

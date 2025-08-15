@@ -11,6 +11,14 @@ chmod +x scripts/lang.sh
 chmod +x scripts/npm_globals.sh
 chmod +x scripts/ssh-setup.sh
 
+## Setup new device
+
+```bash
+$ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ make all
+```
+
 ## Usage
 
 ```bash
