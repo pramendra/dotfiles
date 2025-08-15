@@ -1,0 +1,8 @@
+tap "homebrew/bundle"
+brew "git"
+brew "gnu-stow"
+brew "fzf"
+brew "ripgrep"
+brew "eza"
+brew "bat"
+cask "iterm2"
