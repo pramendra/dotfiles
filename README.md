@@ -6,3 +6,4 @@ Idempotent macOS bootstrap.
 ❯ chmod +x bin/dots
 chmod +x macos/defaults.sh
 chmod +x macos/dock.sh
+chmod +x scripts/vscode.sh
