@@ -23,8 +23,17 @@ while read -r line; do
         # Extract package name (everything before #)
         package=$(echo "$line" | sed 's/[[:space:]]*#.*$//' | xargs)
         if [ -n "$package" ]; then
-            echo "Installing $package..."
-            npm install -g "$package"
+            echo "Checking $package..."
+            # Check if package is already installed
+            if ! npm list -g "$package" >/dev/null 2>&1; then
+                echo "Installing $package..."
+                npm install -g "$package" || {
+                    echo "Warning: Failed to install $package, trying with --force..."
+                    npm install -g "$package" --force
+                }
+            else
+                echo "Package $package is already installed"
+            fi
         fi
     fi
 done < "$NPMFILE"
