@@ -42,6 +42,31 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Disable "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+
+###############################################################################
+# Control Center                                                             #
+###############################################################################
+
+# Set Bluetooth to always show in menu bar (macOS Ventura and later)
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
+
+###############################################################################
+# Screenshots                                                                #
+###############################################################################
+
+# Disable sound when taking screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+defaults write com.apple.screencapture disable-sound -bool true
+
+
+###############################################################################
+# Menu Bar                                                                   #
+###############################################################################
+
+# Automatically hide and show the menu bar (macOS header)
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+
 ###############################################################################
 # Keyboard & Input                                                           #
 ###############################################################################

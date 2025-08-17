@@ -10,7 +10,8 @@ case "$cmd" in
         
         echo "Linking configurations..."
         stow --verbose --target="$HOME" zsh
-        
+        stow --verbose --target="$HOME" git
+
         echo "Verifying configuration..."
         if [ -f "$HOME/.config/zsh/.zshrc" ]; then
             chmod +x "$HOME/.config/zsh/.zshrc"
@@ -24,17 +25,18 @@ EOF
             chmod +x "$HOME/.zshenv"
             echo "✓ Created .zshenv to set ZDOTDIR"
         fi
-        
+
         # Verify Starship installation
         if ! command -v starship >/dev/null; then
             echo "⚠️  Starship not found. Installing..."
             brew install starship
         fi
-        
+
         echo "✨ Configuration complete! Please run: exec zsh"
         ;;
     unlink)
         stow --delete --verbose --target="$HOME" zsh
+        stow --delete --verbose --target="$HOME" git
         [ -f "$HOME/.zshenv" ] && rm "$HOME/.zshenv"
         ;;
     *)
