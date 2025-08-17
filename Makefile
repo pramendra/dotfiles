@@ -12,7 +12,7 @@ endif
 bootstrap: ; ./scripts/bootstrap.sh
 link:      ; ./bin/dots link
 unlink:    ; ./bin/dots unlink
-update:
+update:		;
     $(BREW_INIT) brew update && \
     brew upgrade && \
     brew cleanup
