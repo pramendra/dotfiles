@@ -1,6 +1,11 @@
 #!/bin/zsh
 # Ensure this file is sourced by zsh
 
+# Enable strict error checking
+setopt ERR_EXIT
+setopt PIPE_FAIL
+setopt UNSET
+
 # XDG Base Directory Specification
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -9,8 +14,8 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 PATH="$HOME/bin:$PATH"
 export PATH
 
-# Initialize ZSH features only if running in zsh
-if [ -n "$ZSH_VERSION" ]; then
+# Initialize ZSH features
+if [[ -n "${ZSH_VERSION:-}" ]]; then
     # Initialize completions
     autoload -Uz compinit && compinit
     autoload -U add-zsh-hook
