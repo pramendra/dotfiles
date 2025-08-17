@@ -15,12 +15,27 @@ case "$cmd" in
         if [ -f "$HOME/.config/zsh/.zshrc" ]; then
             chmod +x "$HOME/.config/zsh/.zshrc"
             echo "✓ ZSH config linked and executable"
-            echo "Reloading zsh configuration..."
-            source "$HOME/.config/zsh/.zshrc"
+            
+            # Create/update .zshenv to set ZDOTDIR
+            cat > "$HOME/.zshenv" << EOF
+export ZDOTDIR="\$HOME/.config/zsh"
+[ -f "\$ZDOTDIR/.zshrc" ] && source "\$ZDOTDIR/.zshrc"
+EOF
+            chmod +x "$HOME/.zshenv"
+            echo "✓ Created .zshenv to set ZDOTDIR"
         fi
+        
+        # Verify Starship installation
+        if ! command -v starship >/dev/null; then
+            echo "⚠️  Starship not found. Installing..."
+            brew install starship
+        fi
+        
+        echo "✨ Configuration complete! Please run: exec zsh"
         ;;
     unlink)
         stow --delete --verbose --target="$HOME" zsh
+        [ -f "$HOME/.zshenv" ] && rm "$HOME/.zshenv"
         ;;
     *)
         echo "Usage: dots {link|unlink}"
