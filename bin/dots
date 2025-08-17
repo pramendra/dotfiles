@@ -4,13 +4,17 @@ set -euo pipefail
 cmd="${1:-help}"
 case "$cmd" in
     link)
-        # Create zsh config directory
+        # Create required directories
         mkdir -p "$HOME/.config/zsh"
-        # Link zsh configurations
+        mkdir -p "$HOME/.config/starship"
+        
+        # Link configurations
         stow -v -t "$HOME" zsh
+        stow -v -t "$HOME" starship
         ;;
     unlink)
         stow -Dv -t "$HOME" zsh
+        stow -Dv -t "$HOME" starship
         ;;
     help|*)
         echo "Usage: dots {link|unlink}"
