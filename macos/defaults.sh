@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Close System Preferences to prevent override
+echo "Configuring macOS defaults..."
+
+# Close System Preferences
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for admin password upfront
@@ -11,7 +13,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
-# System Configuration                                                        #
+# System                                                                     #
 ###############################################################################
 
 # Set computer name
@@ -37,11 +39,11 @@ sudo systemsetup -settimezone "Asia/Tokyo" > /dev/null
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Disable the "Are you sure you want to open this application?" dialog
+# Disable "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 ###############################################################################
-# Input & Keyboard                                                           #
+# Keyboard & Input                                                           #
 ###############################################################################
 
 # Fast keyboard repeat rate
@@ -51,21 +53,27 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Disable press-and-hold for keys
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
+# Disable automatic capitalization
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
-# Finder & Files                                                             #
+# Finder                                                                     #
 ###############################################################################
 
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Show file extensions
+# Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
+
+# Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
 
 # Keep folders on top when sorting
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -74,21 +82,8 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-###############################################################################
-# Dock & Mission Control                                                     #
-###############################################################################
-
-# Auto-hide Dock
-defaults write com.apple.dock autohide -bool true
-
-# Don't show recent applications
-defaults write com.Apple.Dock show-recents -bool false
-
-# Disable hot corners
-defaults write com.apple.dock wvous-tl-corner -int 0
-defaults write com.apple.dock wvous-tr-corner -int 0
-defaults write com.apple.dock wvous-bl-corner -int 0
-defaults write com.apple.dock wvous-br-corner -int 0
+# Use list view in Finder windows
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 ###############################################################################
 # Terminal & iTerm2                                                          #
@@ -105,8 +100,8 @@ defaults write com.googlecode.iterm2 HideTab -bool true
 # Restart affected applications                                              #
 ###############################################################################
 
-for app in "Finder" "Dock" "SystemUIServer" "Terminal" "iTerm2"; do
+for app in "Finder" "Terminal" "SystemUIServer" "iTerm2"; do
     killall "${app}" &> /dev/null || true
 done
 
-echo "MacOS defaults set successfully! Some changes may require a logout/restart to take effect."
+echo "macOS defaults configuration complete! Some changes may require a logout/restart to take effect."
