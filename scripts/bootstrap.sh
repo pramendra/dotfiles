@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Ensure Homebrew present
-if ! command -v brew >/dev/null 2>&1; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  eval "$(/opt/homebrew/bin/brew shellenv)" 2>/dev/null || true
+# Initialize Homebrew if needed
+if [[ $(uname -m) == 'arm64' ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    eval "$(/usr/local/bin/brew shellenv)"
 fi
-eval "$(/opt/homebrew/bin/brew shellenv)" 2>/dev/null || true
 
 # Update Homebrew metadata (faster subsequent ops)
 brew update --quiet
@@ -28,3 +28,5 @@ fi
 
 # Ensure NVM_DIR exists for Homebrew-managed nvm
 mkdir -p "$HOME/.nvm"
+
+echo "Bootstrap complete! ✨"
