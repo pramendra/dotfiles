@@ -5,10 +5,17 @@ cmd="${1:-help}"
 case "$cmd" in
     link)
         echo "Creating config directories..."
-        mkdir -p "$HOME/.config/zsh/.config/starship"
+        mkdir -p "$HOME/.config/zsh"
+        mkdir -p "$HOME/.config/starship"
         
         echo "Linking configurations..."
         stow --verbose --target="$HOME" zsh
+        
+        echo "Verifying configuration..."
+        if [ -f "$HOME/.config/zsh/.zshrc" ]; then
+            chmod +x "$HOME/.config/zsh/.zshrc"
+            echo "✓ ZSH config linked and executable"
+        fi
         ;;
     unlink)
         stow --delete --verbose --target="$HOME" zsh

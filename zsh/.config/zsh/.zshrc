@@ -1,28 +1,34 @@
-# ZSH Config Directory
-export ZDOTDIR="$HOME/.config/zsh"
+#!/bin/zsh
+# Ensure this file is sourced by zsh
 
-# Path
+# XDG Base Directory Specification
+export XDG_CONFIG_HOME="$HOME/.config"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# Path Configuration
 PATH="$HOME/bin:$PATH"
+export PATH
 
-# Completion and corrections
-autoload -Uz compinit && compinit
-setopt auto_cd correct
+# Initialize ZSH features only if running in zsh
+if [ -n "$ZSH_VERSION" ]; then
+    # Initialize completions
+    autoload -Uz compinit && compinit
+    autoload -U add-zsh-hook
+fi
 
-# Modern CLI alternatives
-alias ll='eza -lah --git'
-alias cat='bat --paging=never'
-
-# Starship prompt configuration
-export STARSHIP_CONFIG="${ZDOTDIR:-$HOME}/.config/starship/starship.toml"
+# Starship Configuration
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 if command -v starship >/dev/null; then
     eval "$(starship init zsh)"
 else
-    echo "Starship is not installed. Run 'brew install starship' to install it."
+    echo "Starship not installed. Run: brew install starship"
 fi
 
-
-# FZF key bindings
-/opt/homebrew/opt/fzf/install --key-bindings --completion --no-bash --no-fish >/dev/null 2>&1 || true
+# FZF Configuration
+if [ -f "/opt/homebrew/opt/fzf/shell/completion.zsh" ]; then
+    source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+    source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+fi
 
 # NVM Configuration
 export NVM_DIR="$HOME/.nvm"
@@ -32,8 +38,7 @@ if command -v brew >/dev/null 2>&1; then
     [ -s "$NVM_PREFIX/etc/bash_completion.d/nvm" ] && . "$NVM_PREFIX/etc/bash_completion.d/nvm"
 fi
 
-# Auto Node version switching
-autoload -U add-zsh-hook
+# Auto Node Version Switching
 load-nvmrc() {
     local nvmrc_path="$(pwd)/.nvmrc"
     if [ -f "$nvmrc_path" ] && command -v nvm >/dev/null 2>&1; then
