@@ -1,23 +1,40 @@
 SHELL := /bin/bash
-HOMEBREW := /opt/homebrew/bin/brew
-.PHONY: bootstrap link unlink update macos dock
 
-# Check if Homebrew exists and set PATH
-ifeq ($(shell which brew),)
-  BREW_INIT := eval "$$(/opt/homebrew/bin/brew shellenv)"
+.PHONY: bootstrap link unlink update macos dock npm ssh all
+
+# Check if brew is available and set initialization command accordingly
+BREW_PATH := $(shell command -v brew 2>/dev/null)
+
+ifeq ($(BREW_PATH),)
+    # Homebrew not found in PATH, need to initialize it
+    BREW_CMD := eval "$(/opt/homebrew/bin/brew shellenv)" && brew
 else
-  BREW_INIT := 
+    # Homebrew already in PATH
+    BREW_CMD := brew
 endif
 
-bootstrap: ; ./scripts/bootstrap.sh
-link:      ; ./bin/dots link
-unlink:    ; ./bin/dots unlink
-update:		;
-    $(BREW_INIT) brew update && \
-    brew upgrade && \
-    brew cleanup
-macos:     ; ./macos/defaults.sh
-dock:      ; ./macos/dock.sh
-npm:			 ; ./scripts/npm_globals.sh
-ssh:			 ; ./scripts/ssh-setup.sh
-all: 			 ; bootstrap link update macos dock npm ssh
+bootstrap:
+	./scripts/bootstrap.sh
+
+link:
+	./bin/dots link
+
+unlink:
+	./bin/dots unlink
+
+update:
+	$(BREW_CMD) update && $(BREW_CMD) upgrade && $(BREW_CMD) cleanup
+
+macos:
+	./macos/defaults.sh
+
+dock:
+	./macos/dock.sh
+
+npm:
+	./scripts/npm_globals.sh
+
+ssh:
+	./scripts/ssh-setup.sh
+
+all: bootstrap link update macos dock npm ssh
