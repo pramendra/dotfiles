@@ -5,8 +5,8 @@ else
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# Add local bin to PATH
-export PATH="$HOME/bin:$PATH"
-
 # Set ZSH config directory
 export ZDOTDIR="$HOME/.config/zsh"
+
+# Add local bin to PATH
+export PATH="$HOME/bin:$PATH"

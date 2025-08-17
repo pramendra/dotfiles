@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
 cmd="${1:-help}"
 case "$cmd" in
-  link)   stow -v -t "$HOME" zsh git ;;
-  unlink) stow -Dv -t "$HOME" zsh git ;;
-  help|*) echo "Usage: dots {link|unlink}";;
+  link)
+    # Create zsh config directory if it doesn't exist
+    mkdir -p "$HOME/.config/zsh"
+    stow -v -t "$HOME" zsh
+    ;;
+  unlink)
+    stow -Dv -t "$HOME" zsh
+    ;;
+  help|*)
+    echo "Usage: dots {link|unlink}"
+    ;;
 esac
