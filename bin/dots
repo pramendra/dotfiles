@@ -4,19 +4,25 @@ set -euo pipefail
 cmd="${1:-help}"
 case "$cmd" in
     link)
-        # Create required directories
+        echo "Creating config directories..."
         mkdir -p "$HOME/.config/zsh"
         mkdir -p "$HOME/.config/starship"
         
-        # Link configurations
-        stow -v -t "$HOME" zsh
-        stow -v -t "$HOME" starship
+        echo "Linking configurations..."
+        stow --verbose --target="$HOME" zsh
+        stow --verbose --target="$HOME" starship
+        
+        echo "Verifying Starship..."
+        if ! command -v starship >/dev/null 2>&1; then
+            echo "Error: Starship not found. Please run 'brew install starship'"
+            exit 1
+        fi
         ;;
     unlink)
-        stow -Dv -t "$HOME" zsh
-        stow -Dv -t "$HOME" starship
+        stow --delete --verbose --target="$HOME" zsh
+        stow --delete --verbose --target="$HOME" starship
         ;;
-    help|*)
+    *)
         echo "Usage: dots {link|unlink}"
         ;;
 esac
