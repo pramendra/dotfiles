@@ -24,7 +24,7 @@ unlink:
 
 zsh: link
 	[ -f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.backup || true
-	exec zsh
+	exec zsh -l
 
 update:
 	$(BREW_CMD) update && $(BREW_CMD) upgrade && $(BREW_CMD) cleanup

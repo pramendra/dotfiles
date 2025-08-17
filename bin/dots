@@ -5,22 +5,13 @@ cmd="${1:-help}"
 case "$cmd" in
     link)
         echo "Creating config directories..."
-        mkdir -p "$HOME/.config/zsh"
-        mkdir -p "$HOME/.config/starship"
+        mkdir -p "$HOME/.config/zsh/.config/starship"
         
         echo "Linking configurations..."
         stow --verbose --target="$HOME" zsh
-        stow --verbose --target="$HOME" starship
-        
-        echo "Verifying Starship..."
-        if ! command -v starship >/dev/null 2>&1; then
-            echo "Error: Starship not found. Please run 'brew install starship'"
-            exit 1
-        fi
         ;;
     unlink)
         stow --delete --verbose --target="$HOME" zsh
-        stow --delete --verbose --target="$HOME" starship
         ;;
     *)
         echo "Usage: dots {link|unlink}"

@@ -13,12 +13,13 @@ alias ll='eza -lah --git'
 alias cat='bat --paging=never'
 
 # Starship prompt configuration
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export STARSHIP_CONFIG="${ZDOTDIR:-$HOME}/.config/starship/starship.toml"
 if command -v starship >/dev/null; then
     eval "$(starship init zsh)"
 else
     echo "Starship is not installed. Run 'brew install starship' to install it."
 fi
+
 
 # FZF key bindings
 /opt/homebrew/opt/fzf/install --key-bindings --completion --no-bash --no-fish >/dev/null 2>&1 || true
