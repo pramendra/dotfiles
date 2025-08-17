@@ -1,3 +1,20 @@
-nodemon@latest
-npm@latest
-yarn@latest
+# Development tools
+typescript        # TypeScript compiler
+ts-node          # TypeScript execution environment
+npm-check-updates # Package updater
+
+# Package managers
+yarn             # Alternative to npm
+pnpm             # Performance npm
+
+# Development servers
+http-server      # Simple static server
+nodemon          # Auto-reloading node apps
+
+# Framework CLIs
+@vue/cli         # Vue.js CLI
+@angular/cli     # Angular CLI
+
+# Code quality
+eslint           # JavaScript linter
+prettier         # Code formatter
