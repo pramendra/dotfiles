@@ -1,20 +1,25 @@
-# Core developer tooling
-brew "git"
-brew "gh"
-brew "stow"
-brew "jq"
-brew "nvm"                  # Node Version Manager
-
-# Terminal utilities and UX
+# Shell enhancements
+brew "starship"
 brew "fzf"
-brew "ripgrep"
 brew "eza"
 brew "bat"
+
+# Terminal utilities and UX
+brew "ripgrep"
 brew "tree"
 
 # Networking and HTTP
 brew "http-server"
 brew "ssh-copy-id"
+
+# Core developer tooling
+brew "git"
+brew "gh"
+brew "stow"
+brew "jq"
+
+# Development tools
+brew "nvm"
 
 # Documentation / Markdown preview
 brew "grip"
