@@ -3,6 +3,7 @@ brew "starship"
 brew "fzf"
 brew "eza"
 brew "bat"
+brew "asdf"
 
 # Terminal utilities and UX
 brew "ripgrep"

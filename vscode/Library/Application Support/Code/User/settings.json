@@ -1,5 +1,3 @@
 {
-  "editor.tabSize": 2,
-  "files.trimTrailingWhitespace": true,
-  "terminal.integrated.defaultProfile.osx": "zsh"
+    "github.copilot.nextEditSuggestions.enabled": true
 }

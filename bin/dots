@@ -1,45 +1,50 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cmd="${1:-help}"
-case "$cmd" in
-    link)
-        echo "Creating config directories..."
-        mkdir -p "$HOME/.config/zsh"
-        mkdir -p "$HOME/.config/starship"
-        
-        echo "Linking configurations..."
-        stow --verbose --target="$HOME" zsh
-        stow --verbose --target="$HOME" git
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+TARGET="$HOME"
 
-        echo "Verifying configuration..."
-        if [ -f "$HOME/.config/zsh/.zshrc" ]; then
-            chmod +x "$HOME/.config/zsh/.zshrc"
-            echo "✓ ZSH config linked and executable"
-            
-            # Create/update .zshenv to set ZDOTDIR
-            cat > "$HOME/.zshenv" << EOF
-export ZDOTDIR="\$HOME/.config/zsh"
-[ -f "\$ZDOTDIR/.zshrc" ] && source "\$ZDOTDIR/.zshrc"
-EOF
-            chmod +x "$HOME/.zshenv"
-            echo "✓ Created .zshenv to set ZDOTDIR"
-        fi
+usage() {
+    echo "Usage: dots {link|unlink}"
+    exit 1
+}
 
-        # Verify Starship installation
-        if ! command -v starship >/dev/null; then
-            echo "⚠️  Starship not found. Installing..."
-            brew install starship
-        fi
+link_configs() {
+    echo "🔗 Linking all dotfiles modules..."
+    (
+        cd "$DOTFILES_DIR"
+        stow --adopt --target="$HOME" zsh
+        stow --adopt --target="$HOME" vscode
+        stow --verbose --target="$TARGET" \
+            git lang
+    )
 
-        echo "✨ Configuration complete! Please run: exec zsh"
-        ;;
-    unlink)
-        stow --delete --verbose --target="$HOME" zsh
-        stow --delete --verbose --target="$HOME" git
-        [ -f "$HOME/.zshenv" ] && rm "$HOME/.zshenv"
-        ;;
-    *)
-        echo "Usage: dots {link|unlink}"
-        ;;
-esac
+    # Verify Starship
+    if ! command -v starship >/dev/null; then
+        echo "⚠️  Starship not found. Installing..."
+        brew install starship
+    else
+        echo "✓ Starship is installed"
+    fi
+
+    echo "✨ Configuration linked! Run: exec zsh"
+}
+
+unlink_configs() {
+    echo "🗑️ Removing symlinks..."
+    (
+        cd "$DOTFILES_DIR"
+        stow --delete --verbose --target="$TARGET" \
+            zsh git lang vscode macos
+    )
+}
+
+main() {
+    case "${1:-}" in
+        link) link_configs ;;
+        unlink) unlink_configs ;;
+        *) usage ;;
+    esac
+}
+
+main "$@"
