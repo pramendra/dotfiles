@@ -21,6 +21,9 @@ brew "jq"
 # Development tools
 brew "nvm"
 
+# Databases
+brew "postgresql"
+
 # Documentation / Markdown preview
 brew "grip"
 
@@ -41,6 +44,7 @@ cask "1password"
 cask "whatsapp"
 cask "slack"
 cask "zoom"
+cask "obsidian"
 
 # Mac App Store – Productivity & notes
 mas "Grammarly: AI Writing and Grammar", id: 1462114288
