@@ -28,6 +28,7 @@ brew "bun"
 
 # Databases
 brew "postgresql"
+brew "sequel-ace"
 
 # Documentation / Markdown preview
 brew "grip"
