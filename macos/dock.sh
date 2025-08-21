@@ -18,6 +18,9 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock showhidden -bool true
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
+
+
 
 # Clear dock items
 dockutil --no-restart --remove all
