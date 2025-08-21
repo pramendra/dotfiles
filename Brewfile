@@ -5,6 +5,9 @@ brew "eza"
 brew "bat"
 brew "asdf"
 
+# Homebrew tap for bun (JavaScript runtime)
+tap "oven-sh/bun"
+
 # Terminal utilities and UX
 brew "ripgrep"
 brew "tree"
@@ -21,6 +24,7 @@ brew "jq"
 
 # Development tools
 brew "nvm"
+brew "bun"
 
 # Databases
 brew "postgresql"
