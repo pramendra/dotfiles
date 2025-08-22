@@ -42,6 +42,7 @@ cask "arc"                  # Arc Browser
 # Casks – Editors & Dev tools
 cask "visual-studio-code"   # VS Code
 cask "iterm2"
+cask "google-cloud-sdk"
 
 # Casks – Productivity & Utilities
 cask "notion"
@@ -51,6 +52,7 @@ cask "whatsapp"
 cask "slack"
 cask "zoom"
 cask "obsidian"
+cask "docker"
 
 # Mac App Store – Productivity & notes
 mas "Grammarly: AI Writing and Grammar", id: 1462114288
