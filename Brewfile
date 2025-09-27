@@ -28,7 +28,6 @@ brew "bun"
 
 # Databases
 brew "postgresql"
-brew "sequel-ace"
 
 # Documentation / Markdown preview
 brew "grip"
@@ -44,6 +43,7 @@ cask "visual-studio-code"   # VS Code
 cask "iterm2"
 cask "google-cloud-sdk"
 
+
 # Casks – Productivity & Utilities
 cask "notion"
 cask "deepl"
@@ -52,7 +52,9 @@ cask "whatsapp"
 cask "slack"
 cask "zoom"
 cask "obsidian"
+cask "ngrok"
 cask "docker"
+brew "docker-buildx"
 
 # Mac App Store – Productivity & notes
 mas "Grammarly: AI Writing and Grammar", id: 1462114288
