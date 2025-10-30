@@ -1,4 +1,6 @@
 {
     "editor.minimap.enabled": false,
-    "github.copilot.nextEditSuggestions.enabled": true
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "chat.agent.maxRequests": 200,
+    "geminicodeassist.project": "xanthic-operative-0cmm7"
 }

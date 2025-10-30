@@ -2,6 +2,7 @@
 typescript        # TypeScript compiler
 ts-node          # TypeScript execution environment
 npm-check-updates # Package updater
+@google/gemini-cli # Google's Gemini AI CLI
 
 # Package managers
 yarn             # Alternative to npm

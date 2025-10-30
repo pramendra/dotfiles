@@ -1,23 +1,86 @@
-# dotfiles (fresh)
+# Dotfiles
 
-Idempotent macOS bootstrap.
+Personal dotfiles for macOS development environment. Idempotent bootstrap with Homebrew, Stow, and custom scripts.
 
-chmod +x scripts/bootstrap.sh
-chmod +x bin/dots
-chmod +x macos/defaults.sh
-chmod +x macos/dock.sh
-chmod +x scripts/vscode.sh
-chmod +x scripts/lang.sh
-chmod +x scripts/npm_globals.sh
-chmod +x scripts/ssh-setup.sh
+## Features
 
-## Setup new device
+- **Package Management**: Brewfile for Homebrew packages, Npmfile for global npm packages.
+- **Configuration Linking**: Uses GNU Stow for symlinking configs (zsh, git, vscode, etc.).
+- **macOS Customization**: Defaults and dock settings.
+- **Automation**: Makefile targets for setup, updates, and status checks.
+
+## Prerequisites
+
+- macOS (tested on Ventura+)
+- Xcode Command Line Tools: `xcode-select --install`
+- Git: `git --version`
+
+## Quick Setup (New Machine)
 
 ```bash
-$ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ make all
+git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+make all
 ```
+
+This runs: bootstrap → link → update → macos → dock → npm → ssh.
+
+## Manual Setup
+
+1. **Bootstrap**: `./scripts/bootstrap.sh` (installs Homebrew, taps, etc.)
+2. **Link Configs**: `./bin/dots link` (symlinks with Stow)
+3. **Install Packages**: `brew bundle --file="$(pwd)/Brewfile"`
+4. **macOS Defaults**: `./macos/defaults.sh`
+5. **Global NPM**: `npm install -g $(grep -v '^#' Npmfile | tr '\n' ' ')`
+
+## Makefile Targets
+
+- `make bootstrap`: Install Homebrew and basics.
+- `make link`: Symlink configs.
+- `make brew`: Install from Brewfile.
+- `make macos`: Apply macOS defaults.
+- `make update`: Update Homebrew packages.
+- `make doctor`: Check tool status.
+- `make all`: Full setup.
+
+## Managing Node Versions with NVM
+
+NVM is installed via Brewfile. To install and use the latest Node/npm:
+
+```bash
+# After setup, ensure NVM is loaded (added to ~/.zshenv)
+nvm install node  # Latest Node
+nvm use node
+nvm alias default node
+```
+
+Verify: `node --version && npm --version`
+
+## Troubleshooting
+
+- **Stow conflicts**: Run `./bin/dots unlink` to remove links.
+- **Brew issues**: `brew doctor` and `brew update`.
+- **NVM not found**: Reload shell with `exec zsh`.
+- **Permissions**: Use `sudo` for system changes if needed.
+
+## Structure
+
+```
+.dotfiles/
+├── Brewfile          # Homebrew packages
+├── Makefile          # Automation
+├── Npmfile           # Global npm packages
+├── bin/dots          # Symlinking script
+├── git/              # Git config
+├── macos/            # macOS settings
+├── scripts/          # Setup scripts
+├── vscode/           # VS Code config
+└── zsh/              # Zsh config
+```
+
+## Contributing
+
+Fork, make changes, test with `make doctor`, and PR.
 
 ## Usage
 
