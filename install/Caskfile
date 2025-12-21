@@ -1,10 +1,8 @@
-tap "homebrew/cask-fonts"
 tap "homebrew/cask"
 
 cask "1password"
 cask "alfred"
 cask "android-file-transfer"
-cask "anki"
 cask "appcleaner"
 cask "apple-juice"
 cask "bitwarden"

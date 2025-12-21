@@ -4,7 +4,7 @@ OPT_COLOR=""
 
 while getopts ":c" OPT; do
 	case "$OPT" in
-		c) OPT_COLOR="--color";;
+		c) OPT_COLOR="--color-output";;
 	esac
 done
 
@@ -20,4 +20,6 @@ else
   INPUT=$(cat -)
 fi
 
-echo "$INPUT" | underscore print "$OPT_COLOR"
+echo "$INPUT" | jq ${OPT_COLOR:+"$OPT_COLOR"} .
+
+

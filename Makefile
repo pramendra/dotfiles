@@ -34,8 +34,7 @@ stow-linux: core-linux
 
 sudo:
 ifndef GITHUB_ACTION
-	sudo -v
-	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+	# Skip sudo for local runs to avoid password prompts
 endif
 
 packages: brew-packages cask-apps node-packages
@@ -64,8 +63,8 @@ unlink: stow-$(OS)
 brew:
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash	
 	brew cleanup
-	brew update
-	brew upgrade
+	brew update || true
+	brew upgrade || true
 bash: BASH=$(HOMEBREW_PREFIX)/bin/bash
 bash: SHELLS=/private/etc/shells
 bash: brew
