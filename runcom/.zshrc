@@ -152,3 +152,9 @@ prompt pure
 if [ -f $HOME/.bash_profile ]; then 
   source $HOME/.bash_profile;
 fi
+
+# Added by Antigravity
+export PATH="/Users/pramendra/.antigravity/antigravity/bin:$PATH"
+
+# bun completions
+[ -s "/Users/pramendra/.bun/_bun" ] && source "/Users/pramendra/.bun/_bun"
