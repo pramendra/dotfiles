@@ -70,9 +70,14 @@ alias python=python3
 alias pip=pip3
 
 #GCP
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+if command -v gcloud >/dev/null 2>&1; then
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
 
 # setting
 export AWS_PROFILE=saml
-export ONELOGIN_MFA_IP_ADDRESS=$(curl -SsL http://checkip.amazonaws.com/)
+if [ ! -f ~/.ip_cache ] || [ $(find ~/.ip_cache -mtime +1 2>/dev/null) ]; then
+  curl -SsL http://checkip.amazonaws.com/ > ~/.ip_cache
+fi
+export ONELOGIN_MFA_IP_ADDRESS=$(cat ~/.ip_cache)
