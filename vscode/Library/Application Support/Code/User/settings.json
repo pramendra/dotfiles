@@ -2,5 +2,11 @@
     "editor.minimap.enabled": false,
     "github.copilot.nextEditSuggestions.enabled": true,
     "chat.agent.maxRequests": 200,
-    "geminicodeassist.project": "xanthic-operative-0cmm7"
+    "geminicodeassist.project": "xanthic-operative-0cmm7",
+    "chat.tools.terminal.autoApprove": {
+        "git add docs/4-EXECUTION/01-KICKOFF_PLAN_OCT30.md && git commit -m \"🚀 Execution Kickoff Plan (Oct 30): Database push, API bootstrap, Frontend bootstrap, shadcn/ui, first sign-in component\"": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }
