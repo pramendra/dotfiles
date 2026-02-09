@@ -106,7 +106,13 @@ echo "🔇 Disabling unused launch agents..."
 launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.iDrive*.plist 2>/dev/null || true
 
 # DisplayLink (if not using external displays)
-# launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.displaylink*.plist 2>/dev/null || true
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.displaylink*.plist 2>/dev/null || true
+
+# Run silence script for other agents
+echo "🤫 Silencing background agents..."
+if [ -f "$DOTFILES_DIR/bin/silence" ]; then
+  "$DOTFILES_DIR/bin/silence"
+fi
 
 ###############################################################################
 # Final setup                                                                  #

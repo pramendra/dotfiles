@@ -57,7 +57,7 @@ brew "imagemagick"          # Image manipulation
 # Essential Apps                                                               #
 ###############################################################################
 
-cask "1password"            # Password manager
+# cask "1password"            # Password manager (Removed at user request)
 cask "visual-studio-code"   # Primary editor
 cask "docker-desktop"       # Containers
 cask "notion"               # Notes & documentation
@@ -88,7 +88,7 @@ cask "arc"                  # Browser (complement to Dia)
 cask "postman"              # API testing
 cask "tableplus"            # Database GUI
 cask "warp"                 # AI-enabled terminal
-cask "figma"                # Design collaboration
+# cask "figma"                # Design collaboration (Removed at user request)
 
 ###############################################################################
 # Team Communication                                                           #

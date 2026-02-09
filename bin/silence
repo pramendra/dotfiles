@@ -25,6 +25,96 @@ echo "✅ Silenced Microsoft SyncReporter"
 launchctl bootout system/us.zoom.ZoomDaemon 2>/dev/null
 echo "✅ Silenced Zoom Daemon"
 
+# DisplayLink Manager
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.displaylink*.plist 2>/dev/null || true
+echo "✅ Silenced DisplayLink Manager"
+
+# 1Password
+launchctl bootout gui/$(id -u)/com.agilebits.onepassword7-helper 2>/dev/null
+launchctl disable gui/$(id -u)/com.agilebits.onepassword7-helper 2>/dev/null
+launchctl bootout gui/$(id -u)/com.1password.1password 2>/dev/null
+launchctl disable gui/$(id -u)/com.1password.1password 2>/dev/null
+pkill -f "1Password" 2>/dev/null || true
+echo "✅ Silenced 1Password"
+
+# Figma Agent
+launchctl bootout gui/$(id -u)/com.figma.agent 2>/dev/null
+launchctl disable gui/$(id -u)/com.figma.agent 2>/dev/null
+pkill -f "FigmaAgent" 2>/dev/null || true
+echo "✅ Silenced Figma Agent"
+
+# IDrive (Persistent & Root Daemons)
+echo "🔍 Searching for running IDrive services..."
+
+# User agents
+USER_SERVICES=$(launchctl list | grep -E "idrive|idsync" | awk '{print $3}')
+for service in $USER_SERVICES; do
+  echo "Killing user service: $service"
+  launchctl bootout gui/$(id -u)/$service 2>/dev/null || true
+  launchctl disable gui/$(id -u)/$service 2>/dev/null || true
+done
+
+# Root Daemons
+if [ "$EUID" -ne 0 ]; then
+  echo "⚠️  Checking root IDrive services (sudo required)..."
+  # Reset sudo timestamp to ensure prompt if needed
+  sudo -v
+  
+  # Find and kill root services dynamically
+  ROOT_SERVICES=$(sudo launchctl list | grep -E "idrive|idsync" | awk '{print $3}')
+  for service in $ROOT_SERVICES; do
+    echo "Killing root service: $service"
+    sudo launchctl bootout system/$service 2>/dev/null || true
+    sudo launchctl disable system/$service 2>/dev/null || true
+  done
+  
+  # Also try specific known paths for IDrive
+  sudo launchctl unload -w /Library/LaunchDaemons/com.prosoftnet.idsyncdaemon.plist 2>/dev/null || true
+  sudo launchctl unload -w /Library/LaunchDaemons/com.prosoftnet.idrivedaemon.plist 2>/dev/null || true
+  
+  # Force kill processes if they survived
+  sudo pkill -9 -f "IDrive" 2>/dev/null || true
+  sudo pkill -9 -f "IDSync" 2>/dev/null || true
+else
+  # Already root
+  ROOT_SERVICES=$(launchctl list | grep -E "idrive|idsync" | awk '{print $3}')
+  for service in $ROOT_SERVICES; do
+    echo "Killing root service: $service"
+    launchctl bootout system/$service 2>/dev/null || true
+    launchctl disable system/$service 2>/dev/null || true
+  done
+  
+  launchctl unload -w /Library/LaunchDaemons/com.prosoftnet.idsyncdaemon.plist 2>/dev/null || true
+  launchctl unload -w /Library/LaunchDaemons/com.prosoftnet.idrivedaemon.plist 2>/dev/null || true
+  
+  pkill -9 -f "IDrive" 2>/dev/null || true
+  pkill -9 -f "IDSync" 2>/dev/null || true
+fi
+
+echo "✅ Silenced IDrive (Dynamic Discovery)"
+
+# IDrive / Finder Extensions (The source of "FinderPluginApp")
+echo "🔌 Disabling Finder Extensions..."
+EXTENSIONS=$(pluginkit -m | grep -i "idrive" | awk '{print $3}')
+for ext in $EXTENSIONS; do
+  echo "Disabling extension: $ext"
+  pluginkit -e ignore -i "$ext" 2>/dev/null || true
+done
+
+# macOS InstantView
+pkill -9 -f "macOS InstantView" 2>/dev/null || true
+echo "✅ Silenced macOS InstantView"
+
+# FinderPluginApp (Associated with sync tools)
+pkill -9 -f "FinderPluginApp" 2>/dev/null || true
+echo "✅ Silenced FinderPluginApp"
+
+# Final sweep for any lingering processes by name
+pkill -9 -f "IDrive" 2>/dev/null || true
+pkill -9 -f "IDSync" 2>/dev/null || true
+pkill -9 -f "Figma" 2>/dev/null || true
+pkill -9 -f "1Password" 2>/dev/null || true
+
 # Grammarly Project Llama (if unused)
 # launchctl bootout gui/$(id -u)/com.grammarly.ProjectLlama.Shepherd 2>/dev/null
 

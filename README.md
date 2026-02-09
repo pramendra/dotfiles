@@ -9,6 +9,8 @@ git clone https://github.com/pramendra/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
 
+**Note:** `install.sh` will automatically run `bin/silence` to disable unused background agents (DisplayLink, 1Password, etc.).
+
 ## Structure
 
 ```
