@@ -1,0 +1,16 @@
+bradlc.vscode-tailwindcss
+christian-kohler.npm-intellisense
+continue.continue
+csstools.postcss
+dbaeumer.vscode-eslint
+docker.docker
+eamodio.gitlens
+esbenp.prettier-vscode
+github.copilot
+github.copilot-chat
+gruntfuggly.todo-tree
+ms-azuretools.vscode-docker
+ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-ssh
+naumovs.color-highlight
+saoudrizwan.claude-dev

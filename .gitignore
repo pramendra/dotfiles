@@ -1,2 +1,14 @@
-ubie-install.sh
-SH_CUSTOM/*
+# Gitignore
+.DS_Store
+*.DS_Store
+*.swp
+*.swo
+.envrc
+.env
+.env.local
+*.local
+secrets/
+*.pem
+*.key
+.idea/
+*.log

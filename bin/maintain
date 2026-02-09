@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# Weekly Maintenance Script
+# Usage: maintain
+#
+
+echo "🧹 Running maintenance..."
+echo ""
+
+# Homebrew
+echo "📦 Updating Homebrew..."
+brew update && brew upgrade && brew cleanup -s
+
+# npm
+echo ""
+echo "📦 Updating npm packages..."
+npm update -g 2>/dev/null || true
+
+# Clear caches
+echo ""
+echo "🗑️ Clearing caches..."
+rm -rf ~/Library/Caches/* 2>/dev/null || true
+rm -rf ~/Library/Developer/Xcode/DerivedData/* 2>/dev/null || true
+
+# Remove old iOS simulators
+xcrun simctl delete unavailable 2>/dev/null || true
+
+# Disk usage report
+echo ""
+echo "💾 Disk usage:"
+df -h / | tail -1
+
+echo ""
+echo "✅ Maintenance complete!"

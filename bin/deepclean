@@ -1,0 +1,44 @@
+#!/bin/bash
+#
+# Deep Cleanup Script
+# Usage: deepclean
+#
+
+echo "🧹 Deep cleaning system..."
+echo ""
+
+# Brew
+echo "📦 Cleaning Homebrew..."
+brew cleanup -s --prune=all 2>/dev/null
+
+# npm
+echo "📦 Cleaning npm..."
+npm cache clean --force 2>/dev/null
+
+# Xcode
+echo "🔨 Cleaning Xcode..."
+rm -rf ~/Library/Developer/Xcode/DerivedData/* 2>/dev/null
+rm -rf ~/Library/Developer/Xcode/Archives/* 2>/dev/null
+xcrun simctl delete unavailable 2>/dev/null
+
+# System caches
+echo "🗑️ Cleaning system caches..."
+rm -rf ~/Library/Caches/* 2>/dev/null
+rm -rf ~/Library/Logs/* 2>/dev/null
+
+# Docker (if installed)
+if command -v docker &>/dev/null; then
+  echo "🐳 Cleaning Docker..."
+  docker system prune -af 2>/dev/null || true
+fi
+
+# Memory
+echo "💾 Purging memory..."
+sudo purge 2>/dev/null || true
+
+# Report
+echo ""
+echo "💾 Disk usage after cleanup:"
+df -h /
+echo ""
+echo "✅ Deep clean complete!"
