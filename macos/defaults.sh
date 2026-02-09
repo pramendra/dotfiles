@@ -47,6 +47,10 @@ defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 defaults write com.apple.terminal StringEncodings -array 4
 defaults write com.apple.Terminal ShowLineMarks -int 0
 
+# Terminal transparency (15% - subtle but visible)
+defaults write com.apple.Terminal "Window Settings" -dict-add backgroundAlpha 0.85
+defaults write com.apple.Terminal "Window Settings" -dict-add blurBackground true
+
 ###############################################################################
 # Chrome Performance                                                           #
 ###############################################################################

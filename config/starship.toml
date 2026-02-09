@@ -1,57 +1,41 @@
-# Starship prompt configuration
-# https://starship.rs/config/
+# Starship Prompt - Works with Light & Dark themes
+# Uses ANSI colors that adapt to terminal palette
 
-# Fast, minimal prompt
 format = """
 $directory\
 $git_branch\
 $git_status\
-$nodejs\
-$python\
 $character"""
 
-# Disable slow modules
-[aws]
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+style = "bold green"
+format = "[$symbol$branch]($style) "
+symbol = ""
+
+[git_status]
+style = "bold yellow"
+format = '([$all_status$ahead_behind]($style) )'
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+modified = "!"
+staged = "+"
+untracked = "?"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[nodejs]
 disabled = true
 
-[gcloud]
-disabled = true
-
-[docker_context]
+[python]
 disabled = true
 
 [package]
 disabled = true
-
-# Directory
-[directory]
-truncation_length = 3
-truncate_to_repo = true
-style = "bold yellow"
-
-# Git
-[git_branch]
-format = "[$branch]($style) "
-style = "bold green"
-
-[git_status]
-format = '([$all_status$ahead_behind]($style) )'
-style = "bold red"
-
-# Node
-[nodejs]
-format = "[$symbol($version)]($style) "
-symbol = "⬢ "
-style = "bold green"
-detect_files = ["package.json"]
-
-# Python
-[python]
-format = '[${symbol}${pyenv_prefix}(${version})]($style) '
-symbol = "🐍 "
-style = "bold yellow"
-
-# Prompt character
-[character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
