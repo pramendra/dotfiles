@@ -30,6 +30,7 @@ dotfiles clean     # Clean caches
 dotfiles macos     # Apply system defaults
 dotfiles edit      # Open in VSCode
 
+silence            # Disable background agents
 maintain           # Weekly maintenance
 deepclean          # Deep system clean
 freemem            # Purge RAM

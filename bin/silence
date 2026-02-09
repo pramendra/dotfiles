@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+#
+# Silence Background Agents
+# Disables unnecessary launch agents/daemons (Google, Microsoft, Zoom)
+# These will re-appear if you open the apps, so run this periodically.
+#
+
+echo "🔇 Silencing noisy agents..."
+
+# Google Keystone (Chrome Updater)
+launchctl bootout system/com.google.keystone.daemon 2>/dev/null
+launchctl bootout system/com.google.keystone.agent 2>/dev/null
+echo "✅ Silenced Google Keystone"
+
+# Microsoft AutoUpdate
+launchctl bootout system/com.microsoft.autoupdate.helper 2>/dev/null
+launchctl bootout gui/$(id -u)/com.microsoft.update.agent 2>/dev/null
+echo "✅ Silenced Microsoft AutoUpdate"
+
+# Microsoft Office Telemetry
+launchctl bootout gui/$(id -u)/com.microsoft.SyncReporter 2>/dev/null
+echo "✅ Silenced Microsoft SyncReporter"
+
+# Zoom Daemon
+launchctl bootout system/us.zoom.ZoomDaemon 2>/dev/null
+echo "✅ Silenced Zoom Daemon"
+
+# Grammarly Project Llama (if unused)
+# launchctl bootout gui/$(id -u)/com.grammarly.ProjectLlama.Shepherd 2>/dev/null
+
+echo "Done. Run 'dotfiles update' manually to update these apps."
