@@ -17,6 +17,9 @@ brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
 brew "tldr"                 # Simplified man pages
 brew "mas"                  # Mac App Store CLI
+brew "atuin"                # Magical shell history
+brew "aider"                # AI pair programmer
+brew "mods"                 # Pipe to LLM
 
 ###############################################################################
 # Modern CLI Tools                                                             #
@@ -67,6 +70,8 @@ cask "claude"               # AI assistant
 cask "codex"                # OpenAI Codex CLI
 cask "raycast"              # Spotlight replacement with AI
 cask "grammarly-desktop"    # Writing assistant
+cask "cursor"               # AI-first code editor
+cask "ollama"               # Local LLM runner
 cask "arc"                  # Browser (complement to Dia)
 
 # Manual installations required (not in Homebrew):

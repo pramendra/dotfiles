@@ -25,11 +25,16 @@ export LC_ALL="en_US.UTF-8"
 HISTSIZE=50000
 SAVEHIST=50000
 HISTFILE=~/.zsh_history
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt EXTENDED_HISTORY
+
+###############################################################################
+# Atuin (Magical History)                                                      #
+###############################################################################
+
+if command -v atuin &>/dev/null; then
+  eval "$(atuin init zsh)"
+fi
 
 ###############################################################################
 # Git                                                                          #

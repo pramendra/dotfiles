@@ -15,8 +15,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Reduce motion and transparency
-defaults write com.apple.universalaccess reduceMotion -bool true
-defaults write com.apple.universalaccess reduceTransparency -bool true
+# Reduce motion (removed due to SIP protection)
+# Reduce transparency (removed due to SIP protection)
 
 # Disable all animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
@@ -50,6 +50,11 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # Terminal transparency (15% - subtle but visible)
 defaults write com.apple.Terminal "Window Settings" -dict-add backgroundAlpha 0.85
 defaults write com.apple.Terminal "Window Settings" -dict-add blurBackground true
+
+# Chrome Optimization
+if [ -f "$DOTFILES/macos/chrome.sh" ]; then
+    source "$DOTFILES/macos/chrome.sh"
+fi
 
 ###############################################################################
 # Chrome Performance                                                           #
