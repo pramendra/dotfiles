@@ -35,6 +35,14 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Disable auto-restore apps on login
 defaults write NSGlobalDomain ApplePersistence -bool false
 
+###############################################################################
+# Menu Bar                                                                     #
+###############################################################################
+
+# "Automatically hide and show the menu bar" = Always (Auto-hide)
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
+
 # Disable Spotlight indexing for external volumes
 sudo mdutil -d /Volumes 2>/dev/null
 
