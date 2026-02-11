@@ -1,0 +1,20 @@
+# Git Aliases
+# Shortcuts for common git operations
+
+alias g="git"
+alias ga="git add"
+alias gaa="git add -A"
+alias gc="git commit -v"
+alias gcm="git commit -m"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+alias gl="git pull"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gst="git status -sb"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias glog="git log --oneline -20"
+alias glg="git log --graph --oneline --all"
+alias gundo="git reset HEAD~1 --soft"
+alias gclean="git branch --merged | grep -v main | xargs git branch -d"

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#
+# Kill Memory Hogs
+# Forcefully terminates high-memory processes
+#
+# Usage: killmem
+#
+
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.dotfiles}"
+source "$DOTFILES_DIR/lib/common.sh"
+source "$DOTFILES_DIR/lib/process.sh"
+
+log_step "Killing memory hogs"
+
+# Processes to kill (add/remove as needed)
+declare -a MEMORY_HOGS=(
+  "Dia"
+  "Bear Widgets"
+  "Google Drive"
+  "IDrive"
+  "IDSync"
+)
+
+killed=0
+for proc in "${MEMORY_HOGS[@]}"; do
+  if safe_kill "$proc"; then
+    ((killed++))
+  fi
+done
+
+# Purge system memory
+log_step "Purging inactive memory"
+sudo purge 2>/dev/null || true
+log_info "Memory purged"
+
+echo ""
+log_info "Killed $killed processes. Run 'memhogs' to verify."

@@ -105,10 +105,13 @@ echo "🔇 Disabling unused launch agents..."
 # iDrive (if not using)
 launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.iDrive*.plist 2>/dev/null || true
 
-# DisplayLink (if not using external displays)
-launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.displaylink*.plist 2>/dev/null || true
+# Bear Widgets (if not using Bear)
+launchctl bootout gui/$(id -u)/net.shinyfrog.bear.BearWidgets 2>/dev/null || true
 
-# Run silence script for other agents
+# Google Drive (if not using)
+launchctl bootout gui/$(id -u)/com.google.GoogleDrive 2>/dev/null || true
+
+# Run silence script for comprehensive agent disabling
 echo "🤫 Silencing background agents..."
 if [ -f "$DOTFILES_DIR/bin/silence" ]; then
   "$DOTFILES_DIR/bin/silence"

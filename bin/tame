@@ -3,22 +3,39 @@
 # Tame CPU Hogs
 # Renice heavy processes to lower priority
 #
+# Usage: tame
+#
 
-echo "🦁 Taming CPU hogs..."
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.dotfiles}"
+source "$DOTFILES_DIR/lib/common.sh"
+source "$DOTFILES_DIR/lib/process.sh"
 
-# DisplayLink (External Monitors) - Often consistently high CPU
-# +10 niceness = lower priority
-pgrep -f "DisplayLinkUserAgent" | xargs sudo renice +10 2>/dev/null && echo "✅ Tammed DisplayLink (+10)"
+log_step "Taming CPU hogs"
 
-# WindowServer (macOS GUI) - Careful not to go too high or UI lags
-# +5 is safe for background rendering
-pgrep -f "WindowServer" | xargs sudo renice +5 2>/dev/null && echo "✅ Tammed WindowServer (+5)"
+# Renice a process by name
+# Usage: tame_process <name> <niceness> <description>
+tame_process() {
+  local name="$1"
+  local nice="$2"
+  local desc="${3:-$1}"
 
-# Chrome Renderer
-# +5 for background tabs
-pgrep -f "Google Chrome Helper (Renderer)" | xargs sudo renice +5 2>/dev/null && echo "✅ Tammed Chrome Renderers (+5)"
+  if is_process_running "$name"; then
+    pgrep -f "$name" | xargs sudo renice +"$nice" 2>/dev/null && \
+      log_info "Tamed $desc (+$nice)" || \
+      log_warn "Could not tame $desc"
+  else
+    log_debug "$desc not running"
+  fi
+}
 
-# Spotlight Indexing
-pgrep -f "mds_stores" | xargs sudo renice +15 2>/dev/null && echo "✅ Tammed Spotlight (+15)"
+# Process definitions: name, niceness, description
+tame_process "DisplayLinkUserAgent"                10 "DisplayLink"
+tame_process "WindowServer"                         5 "WindowServer"
+tame_process "Google Chrome Helper (Renderer)"      5 "Chrome Renderers"
+tame_process "mds_stores"                          15 "Spotlight"
+tame_process "Dia"                                 10 "Dia Browser"
+tame_process "coreaudiod"                           5 "CoreAudio"
+tame_process "loginwindow"                          5 "Login Window"
 
-echo "Done. System should feel more responsive."
+echo ""
+log_info "System should feel more responsive."

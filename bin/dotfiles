@@ -1,39 +1,57 @@
 #!/usr/bin/env bash
 #
 # Dotfiles CLI
+# Central command for managing dotfiles
+#
 # Usage: dotfiles <command>
 #
 
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.dotfiles}"
+source "$DOTFILES_DIR/lib/common.sh"
 
 show_help() {
-  echo "Usage: dotfiles <command>"
-  echo ""
-  echo "Commands:"
-  echo "  update     Update brew, npm, and system"
-  echo "  clean      Clean caches (brew, npm)"
-  echo "  macos      Apply macOS system defaults"
-  echo "  edit       Open dotfiles in VS Code"
-  echo "  help       Show this help"
+  cat <<EOF
+Usage: dotfiles <command>
+
+Commands:
+  update     Update brew, npm, and system
+  clean      Clean caches (brew, npm)
+  macos      Apply macOS system defaults
+  edit       Open dotfiles in VS Code
+  status     Show system status
+  doctor     Run diagnostics
+  test       Run test suite
+  help       Show this help
+EOF
 }
 
 cmd_update() {
-  echo "📦 Updating system..."
-  brew update && brew upgrade && brew cleanup
-  npm update -g 2>/dev/null || true
-  echo "✅ Update complete"
+  log_step "Updating system"
+  if command_exists brew; then
+    brew update && brew upgrade && brew cleanup
+    log_info "Homebrew updated"
+  fi
+  if command_exists npm; then
+    npm update -g 2>/dev/null || true
+    log_info "npm updated"
+  fi
+  log_info "Update complete"
 }
 
 cmd_clean() {
-  echo "🧹 Cleaning..."
-  brew cleanup -s
-  npm cache clean --force 2>/dev/null || true
+  log_step "Cleaning caches"
+  if command_exists brew; then
+    brew cleanup -s
+  fi
+  if command_exists npm; then
+    npm cache clean --force 2>/dev/null || true
+  fi
   rm -rf ~/Library/Caches/* 2>/dev/null || true
-  echo "✅ Clean complete"
+  log_info "Clean complete"
 }
 
 cmd_macos() {
-  echo "🍎 Applying macOS defaults..."
+  log_step "Applying macOS defaults"
   source "$DOTFILES_DIR/macos/defaults.sh"
 }
 
@@ -41,11 +59,90 @@ cmd_edit() {
   code "$DOTFILES_DIR"
 }
 
+cmd_status() {
+  log_step "System Status"
+  echo ""
+  echo "Dotfiles:  $(git -C "$DOTFILES_DIR" rev-parse --short HEAD 2>/dev/null || echo 'unknown')"
+  echo "Branch:    $(git -C "$DOTFILES_DIR" branch --show-current 2>/dev/null || echo 'unknown')"
+  echo "Homebrew:  $(brew --version 2>/dev/null | head -1 || echo 'not installed')"
+  echo "Shell:     $SHELL"
+  echo "Node:      $(node -v 2>/dev/null || echo 'not installed')"
+  echo "macOS:     $(sw_vers -productVersion 2>/dev/null || echo 'unknown')"
+  echo ""
+
+  # Memory
+  echo "Memory:"
+  top -l 1 2>/dev/null | grep PhysMem || echo "  unavailable"
+  echo ""
+
+  # Disk
+  echo "Disk:"
+  df -h / | tail -1
+}
+
+cmd_doctor() {
+  log_step "Running diagnostics"
+  local issues=0
+
+  # Check symlinks
+  for link in ~/.zshrc ~/.gitconfig; do
+    if [ -L "$link" ] && [ ! -e "$link" ]; then
+      log_warn "Broken symlink: $link"
+      ((issues++))
+    elif [ -L "$link" ]; then
+      log_info "Symlink OK: $link"
+    else
+      log_warn "Not a symlink: $link"
+      ((issues++))
+    fi
+  done
+
+  # Check required tools
+  for tool in brew git starship zoxide eza bat atuin fzf; do
+    if command_exists "$tool"; then
+      log_info "Found: $tool"
+    else
+      log_warn "Missing: $tool"
+      ((issues++))
+    fi
+  done
+
+  # Check lib files
+  for lib in common.sh process.sh launchctl.sh browser.sh; do
+    if [ -f "$DOTFILES_DIR/lib/$lib" ]; then
+      log_info "Library OK: lib/$lib"
+    else
+      log_error "Missing library: lib/$lib"
+      ((issues++))
+    fi
+  done
+
+  echo ""
+  if [ $issues -eq 0 ]; then
+    log_info "No issues found!"
+  else
+    log_warn "$issues issue(s) found"
+  fi
+}
+
+cmd_test() {
+  log_step "Running tests"
+  if [ -f "$DOTFILES_DIR/test/run-tests.sh" ]; then
+    bash "$DOTFILES_DIR/test/run-tests.sh"
+  else
+    log_error "Test runner not found"
+    exit 1
+  fi
+}
+
 case "${1:-help}" in
-  update) cmd_update ;;
-  clean) cmd_clean ;;
-  macos) cmd_macos ;;
-  edit) cmd_edit ;;
+  update)  cmd_update ;;
+  clean)   cmd_clean ;;
+  macos)   cmd_macos ;;
+  edit)    cmd_edit ;;
+  status)  cmd_status ;;
+  doctor)  cmd_doctor ;;
+  test)    cmd_test ;;
   help|--help|-h) show_help ;;
-  *) echo "Unknown command: $1"; show_help; exit 1 ;;
+  *) log_error "Unknown command: $1"; show_help; exit 1 ;;
 esac

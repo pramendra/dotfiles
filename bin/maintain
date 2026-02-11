@@ -1,34 +1,46 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Weekly Maintenance Script
+# Updates packages, clears caches, reports disk usage
+#
 # Usage: maintain
 #
 
-echo "🧹 Running maintenance..."
-echo ""
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.dotfiles}"
+source "$DOTFILES_DIR/lib/common.sh"
+
+log_step "Running weekly maintenance"
 
 # Homebrew
-echo "📦 Updating Homebrew..."
-brew update && brew upgrade && brew cleanup -s
+log_step "Updating Homebrew"
+if command_exists brew; then
+  brew update && brew upgrade && brew cleanup -s
+  log_info "Homebrew updated"
+else
+  log_warn "Homebrew not installed"
+fi
 
 # npm
-echo ""
-echo "📦 Updating npm packages..."
-npm update -g 2>/dev/null || true
+log_step "Updating npm packages"
+if command_exists npm; then
+  npm update -g 2>/dev/null || true
+  log_info "npm packages updated"
+fi
 
 # Clear caches
-echo ""
-echo "🗑️ Clearing caches..."
+log_step "Clearing caches"
 rm -rf ~/Library/Caches/* 2>/dev/null || true
 rm -rf ~/Library/Developer/Xcode/DerivedData/* 2>/dev/null || true
-
-# Remove old iOS simulators
-xcrun simctl delete unavailable 2>/dev/null || true
+if command_exists xcrun; then
+  xcrun simctl delete unavailable 2>/dev/null || true
+fi
+log_info "Caches cleared"
 
 # Disk usage report
 echo ""
+separator
 echo "💾 Disk usage:"
 df -h / | tail -1
 
 echo ""
-echo "✅ Maintenance complete!"
+log_info "Maintenance complete!"

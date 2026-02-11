@@ -105,7 +105,11 @@ cask "linear-linear"        # Modern project management
 ###############################################################################
 
 cask "vlc"                  # Media player
-cask "google-drive"         # Cloud storage
+# cask "google-drive"       # Cloud storage (Removed - not used)
+
+# Manual uninstallation required (not in Homebrew):
+# → Bear (includes Bear Widgets): Uninstall via Applications folder
+# → IDrive (includes IDriveFinderSync): Use IDrive uninstaller or AppCleaner
 
 ###############################################################################
 # Fonts                                                                        #
